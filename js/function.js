@@ -1,6 +1,6 @@
 
 
-$(function() {
+$(function () {
 	function init() {
 		handlePlayPage();
 		handleResultPage();
@@ -19,7 +19,7 @@ function handlePlayPage() {
 	if (!$('body').hasClass('play')) return;
 
 	// show-resultボタン押下時の処理
-	$('#show-result').on('click', function(e) {
+	$('#show-result').on('click', function (e) {
 
 		// デフォルトの動作をキャンセル
 		e.preventDefault();
@@ -34,7 +34,7 @@ function handlePlayPage() {
 
 		// 履歴保存
 		const history = JSON.parse(localStorage.getItem('omikujiHistory') || '[]');
-		
+
 		// 履歴に追加
 		history.push({ result, lucky, date: new Date().toLocaleString() });
 		// 履歴をlocalStorageに保存
@@ -51,7 +51,7 @@ function handlePlayPage() {
 
 // ===== 結果ページの処理 =====
 function handleResultPage() {
-	
+
 	// bodyにresultクラスがなければ終了
 	if (!$('body').hasClass('result')) return;
 
@@ -61,7 +61,7 @@ function handleResultPage() {
 	if (!data) return;
 
 	// 結果表示
-	$('#result-text').text(`${data.result.type}：${data.result.text}`);
+	$('#result-text').text(`${data.result.text}`);
 	// 画像の設定
 	$('#result-img').attr('src', data.result.img).attr('alt', data.result.type);
 
@@ -70,7 +70,8 @@ function handleResultPage() {
 
 	// ラッキーアイテムの表示（設定がONの場合のみ）
 	if (settings.showLuckyItem && data.lucky) {
-		$('#lucky-item').text(data.lucky);
+		$('#lucky-item').text(data.lucky.type);
+		$('#lucky-img').attr('src', data.lucky.img).attr('alt', data.lucky.type);
 	} else {
 		$('#lucky-wrapper').remove();
 	}
@@ -90,15 +91,25 @@ function handleHistoryPage() {
 	const $list = $('#history-list');
 
 	history.forEach(item => {
+		// const $li = $('<li>').html(
+		// 	`${item.date}<strong>${item.result.type}</strong>${item.result.text}` +
+		// 	(item.lucky ? ` ラッキーアイテム： ${item.lucky.type}` : '')
+		// );
+
+
 		const $li = $('<li>').html(
-			`${item.date}：<strong>${item.result.type}</strong> - ${item.result.text}` +
-			(item.lucky ? ` (ラッキーアイテム: ${item.lucky})` : '')
+			`<p id="history-date">${item.date}</p>
+			<p id="result-img">${item.result.type}</p>
+			<p id="result-text">${item.result.text}</p>
+			<p id="lucky-wrapper">${item.lucky ? `<p id="lucky-item">ラッキーアイテム：${item.lucky.type}</p>` : ''}</p>`
 		);
+
+
 		$list.append($li);
 	});
-	
+
 	// 履歴削除ボタン処理
-	$('#clear-history').on('click', function() {
+	$('#clear-history').on('click', function () {
 		if (confirm('履歴をすべて削除しますか？')) {
 			localStorage.removeItem('omikujiHistory');
 			$list.empty();

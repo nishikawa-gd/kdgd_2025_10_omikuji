@@ -1,17 +1,53 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <title>おみくじ演出</title>
   <script src="js/jquery-3.7.1.min.js"></script>
   <script src="js/settings.js"></script>
   <script src="js/function.js"></script>
+  <!-- <link rel="stylesheet" href="css/reset.css"> -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500&display=swap" rel="stylesheet">
 </head>
+
 <body class="play">
-  <h1>おみくじ演出</h1>
-  <div class="animation">
-    <img src="images/play/play.png" alt="おみくじを振る演出">
+
+  <div id="site-title">
+    <img src="" alt="おみくじ">
   </div>
-  <p><a href="#" id="show-result">結果を見る</a></p>
+
+  <div class="main-wrapper">
+    <a href="result.html"  id="show-result">
+      <div id="omikuji-img">
+        <div class="omikuji-hako">
+          <svg width="91" height="168" viewBox="0 0 91 168" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M89.32 4.25L73.41 8.17L16.91 8.17L1.5 4.25L16.91 1L73.41 1L89.32 4.25Z" fill="white" />
+            <path d="M73.54 8.17L17.03 8.17L17.03 166.92H73.54V8.17Z" fill="white" />
+            <path d="M89.32 152.8L73.41 166.92V8.17L89.32 4.25V152.8Z" fill="white" />
+            <path d="M1 152.8L16.91 166.92L16.91 8.17L1 4.25L1 152.8Z" fill="white" />
+            <path
+              d="M89.32 4.25L73.41 8.17M89.32 4.25L73.41 1L16.91 1L1.5 4.25L16.91 8.17M89.32 4.25V152.8L73.41 166.92V8.17M73.41 8.17L16.91 8.17M16.91 8.17L16.91 166.92L1 152.8L1 4.25L16.91 8.17ZM17.03 8.17L73.54 8.17V166.92H17.03L17.03 8.17Z"
+              stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div class="omikuji-bou">
+          <svg width="10" height="142" viewBox="0 0 10 142" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M8.091 4.65324C8.091 3.09418 6.70715 1.83032 5.00009 1.83032C3.29303 1.83032 1.90918 3.09418 1.90918 4.65324V137.347C1.90918 138.906 3.29303 140.17 5.00009 140.17C6.70715 140.17 8.091 138.906 8.091 137.347V4.65324Z"
+              fill="#D02558" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+
+        </div>
+      </div>
+      <p>結果を見る</p>
+    </a>
+  </div>
+
 </body>
+
 </html>
