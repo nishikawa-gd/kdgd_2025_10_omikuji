@@ -1,4 +1,339 @@
-
 html {
     font-family: "Zen Maru Gothic", sans-serif;
+}
+
+* {
+    transition: 0.2s;
+}
+
+
+$color-base: #F9F6F3;
+$color-red: #D02558;
+$color-black: #000;
+$color-white: #fff;
+
+
+@mixin margin-large {
+    margin-top: 40px;
+}
+
+@mixin margin-middle {
+    margin-top: 30px;
+}
+
+@mixin margin-small {
+    margin-top: 20px;
+}
+
+@mixin gap-large {
+    row-gap: 20px;
+}
+
+@mixin gap-middle {
+    row-gap: 10px;
+}
+
+@mixin gap-small {
+    row-gap: 2px;
+}
+
+
+
+@mixin hover {
+    color: $color-red;
+}
+
+// ----------------------------------
+
+@mixin respond-to($breakpoint) {
+    @if $breakpoint =="small" {
+        @media (max-width:640px) {
+            @content;
+        }
+
+        //小さいサイズ
+    }
+
+    @else if $breakpoint =="middle" {
+        @media (min-width: 641px) and (max-width: 1024px) {
+            @content;
+        }
+
+        //タブレット
+    }
+
+    @else if $breakpoint =="large" {
+        @media (min-width: 1025px) {
+            @content;
+        }
+
+        //PCサイズ
+    }
+}
+
+// ----------------------------------
+
+@mixin font-menu {
+    font-size: 20px;
+}
+
+@mixin font-menu-sp {
+    font-size: 12px;
+}
+
+// ----------------------------------
+
+@mixin font-base-large {
+    font-size: 36px;
+}
+
+@mixin font-base-middle {
+    font-size: 24px;
+}
+
+@mixin font-base-small {
+    font-size: 20px;
+}
+
+@mixin font-base-large-sp {
+    font-size: 16px;
+}
+
+@mixin font-base-middle-sp {
+    font-size: 14px;
+}
+
+@mixin font-base-small-sp {
+    font-size: 12px;
+}
+
+// ----------------------------------
+
+@mixin font-base-date {
+    font-size: 16px;
+    color: #a3a3a3;
+}
+
+@mixin font-base-date-sp {
+    font-size: 12px;
+    color: #a3a3a3;
+}
+
+
+
+
+body {
+    #bg {
+        background-image: url(../images/top/kumo-01.png), url(../images/top/kumo-02.png), url(../images/top/kumo-03.png);
+        background-repeat: no-repeat, no-repeat, no-repeat;
+        background-size: auto 158px, auto 270px, auto 156px;
+        background-position: left -100px top 340px, right -80px top 20px, right -70px bottom -40px;
+
+        background-color: $color-base;
+
+
+
+        #menu {
+            position: fixed;
+            width: 250px;
+            height: 100%;
+            top: 0;
+            left: 0;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 40px 0;
+
+            @include respond-to("small") {
+                width: 100%;
+                height: 100px;
+
+                flex-direction: row;
+                align-items: center;
+                padding: 0 20px 0 0;
+            }
+
+            .site-logo {
+                width: 250px;
+                height: auto;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+
+                @include respond-to("small") {
+                    width: 80px;
+                }
+            }
+
+            .to-page {
+                width: auto;
+                height: auto;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                @include gap-middle();
+
+                @include respond-to("small") {
+                    @include gap-small();
+                }
+
+                p {
+                    @include font-menu();
+
+                    @include respond-to("small") {
+                        @include font-base-small-sp();
+                    }
+                }
+
+                &:hover p {
+                    @include hover;
+                }
+            }
+
+            .to-history {
+                .img-wrapper {
+                    width: 100px;
+                    height: auto;
+
+                    @include respond-to("small") {
+                        width: 50px;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+
+            .to-top {
+                .img-wrapper {
+                    width: 64px;
+                    height: auto;
+
+                    @include respond-to("small") {
+                        width: 24px;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+
+            .button-large-small {
+                @include respond-to("large,small") {
+                    display: block;
+                }
+
+                @include respond-to("middle") {
+                    display: none;
+                }
+            }
+
+        }
+
+        .main-wrapper {
+            width: 600px;
+            height: 100vh;
+            margin: 0 auto;
+
+            @include respond-to("small") {
+                width: calc(100% - 40px);
+            }
+
+            .button-middle {
+                @include font-base-small();
+                @include margin-small();
+                display: none;
+
+                &:hover {
+                    @include hover;
+                }
+
+                @include respond-to("middle") {
+                    display: block;
+                }
+
+                @include respond-to("large,small") {
+                    display: none;
+                }
+            }
+        }
+    }
+
+
+
+    // ----------------TOPページ------------------
+    &.index {
+        #load {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+
+            display: none;
+            // display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background-color: $color-base;
+            z-index: 100;
+
+            .site-title-wapper {
+                width: 500px;
+                height: auto;
+
+                @include respond-to("small") {
+                    width: calc(100% - 40px);
+                    height: auto;
+                }
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+
+        .main-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .omikuji-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                @include gap-middle();
+
+                .button-main {
+                    @include font-base-middle();
+                }
+
+                &:hover .fill-white {
+                    fill: $color-red
+                }
+
+                &:hover .button-main {
+                    color: $color-red
+                }
+            }
+
+        }
+    }
+
+    // ----------------TOPページ------------------
+
+
+
+    // ----------------演出ページ------------------
+
+
+
 }

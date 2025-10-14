@@ -7,7 +7,7 @@
   <script src="js/jquery-3.7.1.min.js"></script>
   <script src="js/settings.js"></script>
   <script src="js/function.js"></script>
-  <!-- <link rel="stylesheet" href="css/reset.css"> -->
+  <link rel="stylesheet" href="css/destyle.css">
   <link rel="stylesheet" href="css/style.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,21 +17,33 @@
 
 <body class="history">
 
-  <div id="site-title">
-    <img src="" alt="おみくじ">
+  <div id="bg">
+
+    <div id="menu">
+      <div class="site-logo">
+        <img src="images/top/logo.png" alt="おみくじ">
+      </div>
+
+      <a class="to-page to-top button-large-small" href="index.html">
+        <div class="img-wrapper">
+          <img id="to-history-img" src="images/top/to-top.png" alt="TOPに戻る-画像">
+        </div>
+        <p>トップに戻る</p>
+      </a>
+    </div>
+
+    <div class="main-wrapper">
+
+      <h1>履歴</h1>
+
+      <ul id="history-list"></ul>
+
+      <p class="button-main"><button id="clear-history">履歴を削除</button></p>
+      <p class="button-middle"><a href="index.html">トップに戻る</p></a>
+    </div>
+
   </div>
-
-  <div class="main-wrapper">
-
-    <h1>履歴</h1>
-
-    <ul id="history-list"></ul>
-
-  </div>
-
-
-  <p><button id="clear-history">履歴を削除</button></p>
-  <p><a href="index.html">トップに戻る</a></p>
+  
 </body>
 
 </html>

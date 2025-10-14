@@ -91,11 +91,6 @@ function handleHistoryPage() {
 	const $list = $('#history-list');
 
 	history.forEach(item => {
-		// const $li = $('<li>').html(
-		// 	`${item.date}<strong>${item.result.type}</strong>${item.result.text}` +
-		// 	(item.lucky ? ` ラッキーアイテム： ${item.lucky.type}` : '')
-		// );
-
 
 		const $li = $('<li>').html(
 			`<p id="history-date">${item.date}</p>
