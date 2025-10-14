@@ -8,13 +8,57 @@
   <script src="js/function.js"></script>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500&display=swap" rel="stylesheet">
 </head>
 <body class="index">
-  <h1>おみくじアプリ</h1>
-  <div class="main-visual">
-    <img src="images/top/mainvisual.png" alt="メインビジュアル">
+ 
+  <div id="load">
+    <img id="site-title" src="" alt="おみくじ">
   </div>
-  <p><a href="play.html">おみくじを引く</a></p>
-  <p><a href="history.html">履歴を見る</a></p>
+
+  <div id="menu">
+    <div id="site-logo">
+      <img src="" alt="おみくじ">
+    </div>
+
+    <a id="to-history" href="history.html">
+      <img id="to-history-img" src="" alt="履歴を見る-画像">
+      </p>履歴を見る</p>
+    </a>
+  </div>
+
+  <div class="main-wrapper">
+    <a href="play.html">
+      <div id="omikuji-hako">
+        <svg width="91" height="168" viewBox="0 0 91 168" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_2970_309)">
+            <path d="M89.32 4.25L73.41 8.17H16.91L1.5 4.25L16.91 1H73.41L89.32 4.25Z" fill="white" stroke="black"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M73.54 8.16998H17.03V166.92H73.54V8.16998Z" fill="white" stroke="black" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M89.32 152.8L73.41 166.92V8.17L89.32 4.25V152.8Z" fill="white" stroke="black" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M1 152.8L16.91 166.92V8.17L1 4.25V152.8Z" fill="white" stroke="black" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" />
+            <path
+              d="M24.74 5.35C29.0644 5.35 32.57 5.00526 32.57 4.58C32.57 4.15474 29.0644 3.81 24.74 3.81C20.4156 3.81 16.91 4.15474 16.91 4.58C16.91 5.00526 20.4156 5.35 24.74 5.35Z"
+              fill="black" />
+          </g>
+          <defs>
+            <clipPath id="clip0_2970_309">
+              <rect width="90.32" height="167.92" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+
+      </div>
+      <p>おみくじを引く</p>
+    </a>
+  </div>
+
+
 </body>
 </html>
