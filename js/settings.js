@@ -7,7 +7,14 @@ const omikujiResults = [
 ];
 
 // ラッキーアイテム
-const luckyItems = ["傘", "本", "スマホ", "鍵", "花", "お茶"];
+const luckyItems = [
+  { type: "傘", img: "images/result/kasa.png" },
+  { type: "本", img: "images/result/hon.png" },
+  { type: "スマホ", img: "images/result/sumaho.png" },
+  { type: "鍵", img: "images/result/kagi.png" },
+  { type: "花", img: "images/result/hana.png" },
+  { type: "お茶", img: "images/result/ocha.png" }
+];
 
 // ラッキーアイテムON/OFF
 const settings = {
