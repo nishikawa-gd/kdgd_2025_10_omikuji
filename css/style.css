@@ -168,4 +168,25 @@ body.index .main-wrapper .omikuji-wrapper:hover .fill-white {
 }
 body.index .main-wrapper .omikuji-wrapper:hover .button-main {
   color: #D02558;
+}
+body.play .main-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body.play .main-wrapper .omikuji-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+}
+body.play .main-wrapper .omikuji-wrapper .svg-wrapper:hover .omikuji-hako path {
+  fill: #D02558;
+}
+body.play .main-wrapper .omikuji-wrapper .button-main {
+  font-size: 24px;
+}
+body.play .main-wrapper .omikuji-wrapper:hover .button-main {
+  color: #D02558;
 }/*# sourceMappingURL=style.css.map */

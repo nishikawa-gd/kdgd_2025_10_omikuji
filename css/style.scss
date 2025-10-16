@@ -37,12 +37,6 @@ $color-white: #fff;
     row-gap: 2px;
 }
 
-
-
-@mixin hover {
-    color: $color-red;
-}
-
 // ----------------------------------
 
 @mixin respond-to($breakpoint) {
@@ -334,6 +328,43 @@ body {
 
     // ----------------演出ページ------------------
 
+    &.play {
+         .main-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .omikuji-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                @include gap-middle();
+
+                .svg-wrapper {
+
+
+
+
+                    
+                    &:hover .omikuji-hako path {
+                        fill: $color-red
+                    }
+                    
+                }
+
+                .button-main {
+                    @include font-base-middle();
+                }
+                
+                &:hover .button-main {
+                    color: $color-red
+                }
+                
+            }
+
+        }
+    }
 
 
 }
