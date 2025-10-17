@@ -311,6 +311,19 @@ body.play .main-wrapper #show-result .omikuji-wrapper .svg-wrapper .omikuji-bou 
 }
 body.play .main-wrapper #show-result .omikuji-wrapper .button-main {
   font-size: 24px;
+  opacity: 0;
+  animation: to_result 8s 1 forwards;
+}
+@keyframes to_result {
+  0% {
+    opacity: 0;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 body.play .main-wrapper #show-result .omikuji-wrapper:hover .omikuji-hako path {
   fill: #D02558;
@@ -322,7 +335,7 @@ body.result #load {
   position: fixed;
   width: 100%;
   height: 100%;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   background-image: url(../images/top/kumo-01.png), url(../images/top/kumo-02.png), url(../images/top/kumo-03.png);
@@ -368,4 +381,10 @@ body.result #load .img-wrapper {
     transform: rotate(-15deg) rotateY(720deg);
     opacity: 0;
   }
+}
+body.result .main-wrapper .omikuji-wrapper {
+  width: 600px;
+  height: auto;
+  background-color: #fff;
+  border: 5px solid #000;
 }/*# sourceMappingURL=style.css.map */

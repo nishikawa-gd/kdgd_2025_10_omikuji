@@ -94,9 +94,11 @@ function handleHistoryPage() {
 
 		const $li = $('<li>').html(
 			`<p id="history-date">${item.date}</p>
+			<div class="text-wrapper">
 			<p id="result-img">${item.result.type}</p>
 			<p id="result-text">${item.result.text}</p>
-			<p id="lucky-wrapper">${item.lucky ? `<p id="lucky-item">ラッキーアイテム：${item.lucky.type}</p>` : ''}</p>`
+			<p id="lucky-wrapper">${item.lucky ? `<p id="lucky-item">ラッキーアイテムは…${item.lucky.type}</p>` : ''}</p>
+			</div>`
 		);
 
 
