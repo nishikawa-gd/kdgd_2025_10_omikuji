@@ -25,16 +25,16 @@ $color-white: #fff;
     margin-top: 20px;
 }
 
-@mixin gap-large {
-    row-gap: 20px;
+@mixin margin-large-sp {
+    margin-top: 20px;
 }
 
-@mixin gap-middle {
-    row-gap: 10px;
+@mixin margin-middle-sp {
+    margin-top: 10px;
 }
 
-@mixin gap-small {
-    row-gap: 2px;
+@mixin margin-small-sp {
+    margin-top: 2px;
 }
 
 // ----------------------------------
@@ -169,17 +169,14 @@ body {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                @include gap-middle();
-
-                @include respond-to("small") {
-                    @include gap-small();
-                }
 
                 p {
                     @include font-menu();
+                    @include margin-middle();
 
                     @include respond-to("small") {
                         @include font-base-small-sp();
+                        @include margin-small-sp();
                     }
                 }
 
@@ -350,10 +347,10 @@ body {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                @include gap-middle();
 
                 .button-main {
                     @include font-base-middle();
+                    @include margin-middle();
                 }
 
                 &:hover .fill-white {
@@ -369,6 +366,10 @@ body {
     }
 
     // ----------------TOPページ------------------
+
+
+
+
 
 
 
@@ -404,7 +405,6 @@ body {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    @include gap-middle();
 
                     .svg-wrapper {
                         position: relative;
@@ -513,6 +513,7 @@ body {
                         @include font-base-middle();
                         opacity: 0;
                         animation: to_result 8s 1 forwards;
+                        @include margin-middle();
 
                         @keyframes to_result {
                             0% {
@@ -548,6 +549,9 @@ body {
 
 
 
+
+
+
     // ----------------結果ページ------------------
 
     &.result {
@@ -557,8 +561,7 @@ body {
             width: 100%;
             height: 100%;
 
-            display: none;
-            // display: flex;
+            display: flex;
             align-items: center;
             justify-content: center;
 
@@ -619,19 +622,164 @@ body {
         }
 
         .main-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            padding-top: 40px;
+
+            @include respond-to("small") {
+                justify-content: center;
+
+                padding: 0 20px;
+            }
+
             .omikuji-wrapper {
                 width: 600px;
                 height: auto;
 
+                padding: 20px;
+
                 background-color: $color-white;
                 border: 5px solid $color-black;
 
+                @include respond-to("small") {
+                    width: 100%;
+                    padding: 10px;
 
+                    border: 4px solid $color-black;
+
+                }
+
+                h1 {
+                    width: 100%;
+                    height: 140px;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    background-color: $color-red;
+
+                    @include respond-to("small") {
+                        height: 70px;
+                    }
+
+                    .result-img-wrapper {
+                        height: 90px;
+                        width: auto;
+
+                        @include respond-to("small") {
+                            height: 30px;
+                        }
+
+                        #result-img {
+                            height: 100%;
+                            width: auto;
+                        }
+                    }
+                }
+
+                h2 {
+                    @include font-base-large();
+                    text-align: center;
+                    @include margin-small();
+
+                    @include respond-to("small") {
+                        @include font-base-large-sp()
+                    }
+                }
+
+                .lucky-wrapper {
+                    @include margin-middle();
+
+                    @include respond-to("small") {
+                        @include margin-small();
+                    }
+
+                    .lucky-text-wrappre {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        #lucky-text {
+                            @include font-base-middle();
+
+                            @include respond-to("small") {
+                                @include font-base-middle-sp();
+                            }
+                        }
+
+                        #lucky-item {
+                            @include font-base-large();
+
+                            @include respond-to("small") {
+                                @include font-base-large-sp();
+                            }
+                        }
+                    }
+
+                    .lucky-img-bg {
+                        width: 100%;
+                        height: 300px;
+
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        @include respond-to("small") {
+                            height: 150px;
+                        }
+
+                        .lucky-img-wrapper {
+                            width: 280px;
+                            height: 280px;
+
+                            @include respond-to("small") {
+                                width: 130px;
+                                height: 130px;
+                            }
+
+                            #lucky-img {
+                                width: 100%;
+                                height: auto;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .button-main {
+                @include font-base-middle();
+                @include margin-large();
+                @include respond-to("small") {
+                    @include font-base-middle-sp();
+                    @include margin-large-sp();
+                }
+
+                &:hover {
+                    color: $color-red
+                }
             }
         }
 
 
     }
 
+    // ----------------結果ページ------------------
+
+
+
+
+
+
+
+    // ----------------履歴ページ------------------
+
+    &.history {
+        
+    }
+
+    // ----------------履歴ページ------------------
 
 }
