@@ -71,7 +71,7 @@ body #bg #menu .to-page:hover p {
   color: #D02558;
 }
 body #bg #menu .to-history .img-wrapper {
-  width: 100px;
+  width: auto;
   height: auto;
 }
 @media (max-width: 640px) {
@@ -79,12 +79,18 @@ body #bg #menu .to-history .img-wrapper {
     width: 50px;
   }
 }
-body #bg #menu .to-history .img-wrapper img {
+body #bg #menu .to-history .img-wrapper svg {
   width: 100%;
   height: auto;
 }
+body #bg #menu .to-history:hover .left {
+  transform: rotate(-4deg) translate(-2px, 2px);
+}
+body #bg #menu .to-history:hover .right {
+  transform: rotate(4deg) translate(2px, -2px);
+}
 body #bg #menu .to-top .img-wrapper {
-  width: 64px;
+  width: auto;
   height: auto;
 }
 @media (max-width: 640px) {
@@ -92,9 +98,12 @@ body #bg #menu .to-top .img-wrapper {
     width: 24px;
   }
 }
-body #bg #menu .to-top .img-wrapper img {
+body #bg #menu .to-top .img-wrapper svg {
   width: 100%;
-  height: auto;
+  height: 100%;
+}
+body #bg #menu .to-top:hover .fill-white {
+  fill: #D02558;
 }
 @media (min-width: 641px) and (max-width: 1024px) {
   body #bg #menu .button-large-small {
@@ -175,18 +184,112 @@ body.play .main-wrapper {
   align-items: center;
   justify-content: center;
 }
-body.play .main-wrapper .omikuji-wrapper {
+body.play .main-wrapper #show-result {
+  pointer-events: none;
+  animation: link 7.5s 1 forwards;
+}
+@keyframes link {
+  0% {
+    pointer-events: none;
+  }
+  99% {
+    pointer-events: none;
+  }
+  100% {
+    pointer-events: auto;
+  }
+}
+body.play .main-wrapper #show-result .omikuji-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 10px;
 }
-body.play .main-wrapper .omikuji-wrapper .svg-wrapper:hover .omikuji-hako path {
-  fill: #D02558;
+body.play .main-wrapper #show-result .omikuji-wrapper .svg-wrapper {
+  position: relative;
+  width: 100px;
+  height: 200px;
+  animation: play 8s 1 forwards;
 }
-body.play .main-wrapper .omikuji-wrapper .button-main {
+body.play .main-wrapper #show-result .omikuji-wrapper .svg-wrapper .omikuji-hako {
+  position: absolute;
+}
+body.play .main-wrapper #show-result .omikuji-wrapper .svg-wrapper .omikuji-bou {
+  position: absolute;
+  bottom: 40px;
+  right: 34px;
+  animation: play_bou 8s 1 forwards;
+}
+@keyframes play_bou {
+  95% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(50px);
+  }
+}
+@keyframes play {
+  0% {
+    transform: rotate(160deg) translateY(10px);
+  }
+  5% {
+    transform: rotate(160deg) translateY(0);
+  }
+  10% {
+    transform: rotate(160deg) translateY(10px);
+  }
+  15% {
+    transform: rotate(160deg) translateY(0);
+  }
+  20% {
+    transform: rotate(160deg) translateY(10px);
+  }
+  25% {
+    transform: rotate(160deg) translateY(0);
+  }
+  35% {
+    transform: rotate(100deg) translateY(10px);
+  }
+  40% {
+    transform: rotate(100deg) translateY(0);
+  }
+  45% {
+    transform: rotate(100deg) translateY(10px);
+  }
+  50% {
+    transform: rotate(100deg) translateY(0);
+  }
+  55% {
+    transform: rotate(100deg) translateX(10px);
+  }
+  60% {
+    transform: rotate(100deg) translateX(0);
+  }
+  65% {
+    transform: rotate(100deg) translateX(10px);
+  }
+  70% {
+    transform: rotate(100deg) translateX(10px);
+  }
+  80% {
+    transform: rotate(40deg) translateY(0);
+  }
+  85% {
+    transform: rotate(40deg) translateY(10px);
+  }
+  90% {
+    transform: rotate(40deg) translateY(0);
+  }
+  100% {
+    transform: rotate(40deg) translateY(10px);
+  }
+}
+body.play .main-wrapper #show-result .omikuji-wrapper .button-main {
   font-size: 24px;
 }
-body.play .main-wrapper .omikuji-wrapper:hover .button-main {
+body.play .main-wrapper #show-result .omikuji-wrapper:hover .omikuji-hako path {
+  fill: #D02558;
+}
+body.play .main-wrapper #show-result .omikuji-wrapper:hover .button-main {
   color: #D02558;
 }/*# sourceMappingURL=style.css.map */
