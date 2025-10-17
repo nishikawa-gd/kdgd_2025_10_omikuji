@@ -137,15 +137,35 @@ body.index #load {
   position: fixed;
   width: 100%;
   height: 100%;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url(../images/top/kumo-01.png), url(../images/top/kumo-02.png), url(../images/top/kumo-03.png);
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-size: auto 158px, auto 270px, auto 156px;
+  background-position: left -100px top 340px, right -80px top 20px, right -70px bottom -40px;
   background-color: #F9F6F3;
+  opacity: 1;
   z-index: 100;
+  animation: load 3s 1 forwards;
+}
+@keyframes load {
+  0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
 }
 body.index #load .site-title-wapper {
   width: 500px;
   height: auto;
+  opacity: 1;
+  animation: load 2s 1 forwards;
 }
 @media (max-width: 640px) {
   body.index #load .site-title-wapper {
@@ -156,6 +176,14 @@ body.index #load .site-title-wapper {
 body.index #load .site-title-wapper img {
   width: 100%;
   height: auto;
+}
+@keyframes kieru {
+  0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
 }
 body.index .main-wrapper {
   display: flex;
@@ -247,26 +275,23 @@ body.play .main-wrapper #show-result .omikuji-wrapper .svg-wrapper .omikuji-bou 
   25% {
     transform: rotate(160deg) translateY(0);
   }
-  35% {
-    transform: rotate(100deg) translateY(10px);
+  30% {
+    transform: rotate(160deg) translateY(10px);
   }
   40% {
-    transform: rotate(100deg) translateY(0);
-  }
-  45% {
-    transform: rotate(100deg) translateY(10px);
-  }
-  50% {
-    transform: rotate(100deg) translateY(0);
-  }
-  55% {
-    transform: rotate(100deg) translateX(10px);
-  }
-  60% {
     transform: rotate(100deg) translateX(0);
   }
-  65% {
+  45% {
     transform: rotate(100deg) translateX(10px);
+  }
+  55% {
+    transform: rotate(100deg) translateX(0);
+  }
+  60% {
+    transform: rotate(100deg) translateX(10px);
+  }
+  65% {
+    transform: rotate(100deg) translateX(0);
   }
   70% {
     transform: rotate(100deg) translateX(10px);
@@ -292,4 +317,55 @@ body.play .main-wrapper #show-result .omikuji-wrapper:hover .omikuji-hako path {
 }
 body.play .main-wrapper #show-result .omikuji-wrapper:hover .button-main {
   color: #D02558;
+}
+body.result #load {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../images/top/kumo-01.png), url(../images/top/kumo-02.png), url(../images/top/kumo-03.png);
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-size: auto 158px, auto 270px, auto 156px;
+  background-position: left -100px top 340px, right -80px top 20px, right -70px bottom -40px;
+  background-color: #F9F6F3;
+  opacity: 1;
+  z-index: 100;
+  animation: load 5s 1 forwards;
+}
+@keyframes load {
+  0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+body.result #load .img-wrapper {
+  animation: mawaru 3.5s 1 forwards ease-in-out;
+  opacity: 1;
+}
+@keyframes mawaru {
+  0% {
+    transform: rotate(-15deg);
+  }
+  30% {
+    transform: rotate(-15deg) rotateY(180deg);
+  }
+  50% {
+    transform: rotate(-15deg) rotateY(360deg);
+  }
+  70% {
+    transform: rotate(-15deg) rotateY(540deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-15deg) rotateY(720deg);
+    opacity: 0;
+  }
 }/*# sourceMappingURL=style.css.map */

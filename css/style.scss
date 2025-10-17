@@ -282,17 +282,41 @@ body {
             width: 100%;
             height: 100%;
 
-            display: none;
-            // display: flex;
+            display: flex;
             align-items: center;
             justify-content: center;
 
+            background-image: url(../images/top/kumo-01.png), url(../images/top/kumo-02.png), url(../images/top/kumo-03.png);
+            background-repeat: no-repeat, no-repeat, no-repeat;
+            background-size: auto 158px, auto 270px, auto 156px;
+            background-position: left -100px top 340px, right -80px top 20px, right -70px bottom -40px;
             background-color: $color-base;
+            opacity: 1;
             z-index: 100;
+            animation: load 3s 1 forwards;
+
+            @keyframes load {
+                0% {
+                    opacity: 1;
+                }
+
+                70% {
+                    opacity: 1;
+                }
+
+                100% {
+                    opacity: 0;
+                    display: none;
+                }
+            }
 
             .site-title-wapper {
                 width: 500px;
                 height: auto;
+
+                opacity: 1;
+                animation: load 2s 1 forwards;
+
 
                 @include respond-to("small") {
                     width: calc(100% - 40px);
@@ -302,6 +326,16 @@ body {
                 img {
                     width: 100%;
                     height: auto;
+                }
+
+                @keyframes kieru {
+                    0% {
+                        opacity: 1;
+                    }
+
+                    70% {
+                        opacity: 0;
+                    }
                 }
             }
         }
@@ -350,149 +384,225 @@ body {
             #show-result {
                 pointer-events: none;
                 animation: link 7.5s 1 forwards;
+
                 @keyframes link {
 
                     0% {
                         pointer-events: none;
                     }
+
                     99% {
                         pointer-events: none;
                     }
 
                     100% {
                         pointer-events: auto;
-                }
-            }
-
-            .omikuji-wrapper {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                @include gap-middle();
-
-                .svg-wrapper {
-                    position: relative;
-                    width: 100px;
-                    height: 200px;
-                    animation: play 8s 1 forwards;
-                    
-
-                    .omikuji-hako {
-                        position: absolute;
                     }
+                }
 
-                    .omikuji-bou {
-                        position: absolute;
-                        bottom: 40px;
-                        right: 34px;
-                        animation: play_bou 8s 1 forwards;
+                .omikuji-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    @include gap-middle();
 
-                        @keyframes play_bou {
-                            95% {
-                                transform: translateY(0);
+                    .svg-wrapper {
+                        position: relative;
+                        width: 100px;
+                        height: 200px;
+                        animation: play 8s 1 forwards;
+
+
+                        .omikuji-hako {
+                            position: absolute;
+                        }
+
+                        .omikuji-bou {
+                            position: absolute;
+                            bottom: 40px;
+                            right: 34px;
+                            animation: play_bou 8s 1 forwards;
+
+                            @keyframes play_bou {
+                                95% {
+                                    transform: translateY(0);
+                                }
+
+                                100% {
+                                    transform: translateY(50px);
+                                }
+
+                            }
+                        }
+
+                        @keyframes play {
+
+                            0% {
+                                transform: rotate(160deg) translateY(10px);
+                            }
+
+                            5% {
+                                transform: rotate(160deg) translateY(0);
+                            }
+
+                            10% {
+                                transform: rotate(160deg) translateY(10px);
+                            }
+
+                            15% {
+                                transform: rotate(160deg) translateY(0);
+                            }
+
+                            20% {
+                                transform: rotate(160deg) translateY(10px);
+                            }
+
+                            25% {
+                                transform: rotate(160deg) translateY(0);
+                            }
+
+                            30% {
+                                transform: rotate(160deg) translateY(10px);
+                            }
+
+                            40% {
+                                transform: rotate(100deg) translateX(0);
+                            }
+
+                            45% {
+                                transform: rotate(100deg) translateX(10px);
+                            }
+
+                            55% {
+                                transform: rotate(100deg) translateX(0);
+                            }
+
+                            60% {
+                                transform: rotate(100deg) translateX(10px);
+                            }
+
+                            65% {
+                                transform: rotate(100deg) translateX(0);
+                            }
+
+                            70% {
+                                transform: rotate(100deg) translateX(10px);
+                            }
+
+                            80% {
+                                transform: rotate(40deg) translateY(0);
+                            }
+
+                            85% {
+                                transform: rotate(40deg) translateY(10px);
+                            }
+
+                            90% {
+                                transform: rotate(40deg) translateY(0);
                             }
 
                             100% {
-                                transform: translateY(50px);
+                                transform: rotate(40deg) translateY(10px);
                             }
 
                         }
+
                     }
 
-                    @keyframes play {
+                    .button-main {
+                        @include font-base-middle();
+                    }
 
-                        0% {
-                            transform: rotate(160deg) translateY(10px);
-                        }
+                    &:hover .omikuji-hako path {
+                        fill: $color-red
+                    }
 
-                        5% {
-                            transform: rotate(160deg) translateY(0);
-                        }
+                    &:hover .button-main {
+                        color: $color-red
+                    }
 
-                        10% {
-                            transform: rotate(160deg) translateY(10px);
-                        }
-
-                        15% {
-                            transform: rotate(160deg) translateY(0);
-                        }
-
-                        20% {
-                            transform: rotate(160deg) translateY(10px);
-                        }
-
-                        25% {
-                            transform: rotate(160deg) translateY(0);
-                        }
-
-                        35% {
-                            transform: rotate(100deg)  translateY(10px);
-                        }
-
-                        40% {
-                            transform: rotate(100deg)  translateY(0);
-                        }
-                        
-                        45% {
-                            transform: rotate(100deg) translateY(10px);
-                        }
-
-                        50% {
-                            transform: rotate(100deg)  translateY(0);
-                        }
-
-                        55% {
-                            transform: rotate(100deg) translateX(10px);
-                        }
-
-                        60% {
-                            transform: rotate(100deg) translateX(0);
-                        }
-
-                        65% {
-                            transform: rotate(100deg) translateX(10px);
-                        }
-
-                        70% {
-                            transform: rotate(100deg) translateX(10px);
-                        }
-
-                        80% {
-                            transform: rotate(40deg) translateY(0);
-                        }
-
-                        85% {
-                            transform: rotate(40deg) translateY(10px);
-                        }
-
-                        90% {
-                            transform: rotate(40deg) translateY(0);
-                        }
-
-                        100% {
-                            transform: rotate(40deg) translateY(10px);
-                        }
-                
-                    } 
-                       
                 }
 
-                .button-main {
-                    @include font-base-middle();
-                }
-
-                &:hover .omikuji-hako path {
-                    fill: $color-red
-                }
-                
-                &:hover .button-main {
-                    color: $color-red
-                }
-                
             }
-
         }
+
     }
 
-}
+    // ----------------演出ページ------------------
+
+
+
+    // ----------------結果ページ------------------
+
+    &.result {
+
+        #load {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background-image: url(../images/top/kumo-01.png), url(../images/top/kumo-02.png), url(../images/top/kumo-03.png);
+            background-repeat: no-repeat, no-repeat, no-repeat;
+            background-size: auto 158px, auto 270px, auto 156px;
+            background-position: left -100px top 340px, right -80px top 20px, right -70px bottom -40px;
+            background-color: $color-base;
+            opacity: 1;
+            z-index: 100;
+            animation: load 5s 1 forwards;
+
+            @keyframes load {
+                0% {
+                    opacity: 1;
+                }
+
+                70% {
+                    opacity: 1;
+                }
+
+                100% {
+                    opacity: 0;
+                    display: none;
+                }
+            }
+
+            .img-wrapper {
+                animation: mawaru 3.5s 1 forwards ease-in-out;
+                opacity: 1;
+
+                @keyframes mawaru {
+                    0% {
+                        transform: rotate(-15deg);
+                    }
+
+                    30% {
+                        transform: rotate(-15deg) rotateY(180deg);
+                    }
+
+                    50% {
+                        transform: rotate(-15deg) rotateY(360deg);
+                    }
+
+                    70% {
+                        transform: rotate(-15deg) rotateY(540deg);
+                        opacity: 1;
+                    }
+
+                    100% {
+                        transform: rotate(-15deg) rotateY(720deg);
+                        opacity: 0;
+                    }
+                }
+            }
+
+
+        }
+
+
+    }
+
+
 }
