@@ -18,22 +18,15 @@ $color-white: #fff;
 }
 
 @mixin margin-middle {
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 @mixin margin-small {
-    margin-top: 20px;
-}
-
-@mixin margin-large-sp {
-    margin-top: 20px;
-}
-
-@mixin margin-middle-sp {
     margin-top: 10px;
 }
 
-@mixin margin-small-sp {
+
+@mixin margin-menu-sp {
     margin-top: 2px;
 }
 
@@ -108,22 +101,22 @@ $color-white: #fff;
     color: #a3a3a3;
 }
 
-@mixin font-base-date-sp {
-    font-size: 12px;
-    color: #a3a3a3;
-}
-
 
 
 
 body {
     #bg {
+        // width: 100vw;
+        // height: 100vh;
+
         background-image: url(../images/top/kumo-01.png), url(../images/top/kumo-02.png), url(../images/top/kumo-03.png);
         background-repeat: no-repeat, no-repeat, no-repeat;
         background-size: auto 158px, auto 270px, auto 156px;
-        background-position: left -100px top 340px, right -80px top 20px, right -70px bottom -40px;
-
+        background-position: left -100px top 340px, right -80px top 20px, right -70px top 680px;
         background-color: $color-base;
+
+
+        // background-attachment: fixed;
 
 
 
@@ -160,6 +153,10 @@ body {
                 @include respond-to("small") {
                     width: 80px;
                 }
+
+                @include respond-to("middle") {
+                    width: 80px;
+                }
             }
 
             .to-page {
@@ -172,11 +169,11 @@ body {
 
                 p {
                     @include font-menu();
-                    @include margin-middle();
+                    @include margin-small();
 
                     @include respond-to("small") {
                         @include font-base-small-sp();
-                        @include margin-small-sp();
+                        @include margin-menu-sp();
                     }
                 }
 
@@ -241,33 +238,51 @@ body {
 
         }
 
-        .main-wrapper {
-            width: 600px;
+        .main-content {
+            width: 100vw;
             height: 100vh;
-            margin: 0 auto;
 
-            @include respond-to("small") {
-                width: calc(100% - 40px);
+            overflow: scroll;
+
+            &::-webkit-scrollbar {
+                display: none;
             }
 
-            .button-middle {
-                @include font-base-small();
-                @include margin-small();
-                display: none;
+            @include respond-to("middle") {
+                z-index: 50;
+            }
 
-                &:hover {
-                    color: $color-red;
+            .main-wrapper {
+                width: 600px;
+                height: 100%;
+                margin: 0 auto;
+
+
+                @include respond-to("small") {
+                    width: calc(100% - 40px);
                 }
 
-                @include respond-to("middle") {
-                    display: block;
-                }
-
-                @include respond-to("large,small") {
+                .button-middle {
+                    @include font-base-small();
+                    @include margin-middle();
+                    text-align: center;
                     display: none;
+
+                    &:hover {
+                        color: $color-red;
+                    }
+
+                    @include respond-to("middle") {
+                        display: block;
+                    }
+
+                    @include respond-to("large,small") {
+                        display: none;
+                    }
                 }
             }
         }
+
     }
 
 
@@ -366,9 +381,6 @@ body {
     }
 
     // ----------------TOPページ------------------
-
-
-
 
 
 
@@ -551,7 +563,6 @@ body {
 
 
 
-
     // ----------------結果ページ------------------
 
     &.result {
@@ -683,7 +694,7 @@ body {
                 h2 {
                     @include font-base-large();
                     text-align: center;
-                    @include margin-small();
+                    @include margin-middle();
 
                     @include respond-to("small") {
                         @include font-base-large-sp()
@@ -691,10 +702,10 @@ body {
                 }
 
                 .lucky-wrapper {
-                    @include margin-middle();
+                    margin-top: 30px;
 
                     @include respond-to("small") {
-                        @include margin-small();
+                        @include margin-middle();
                     }
 
                     .lucky-text-wrappre {
@@ -752,9 +763,11 @@ body {
             .button-main {
                 @include font-base-middle();
                 @include margin-large();
+                text-align: center;
+
                 @include respond-to("small") {
                     @include font-base-middle-sp();
-                    @include margin-large-sp();
+                    @include margin-middle();
                 }
 
                 &:hover {
@@ -772,12 +785,150 @@ body {
 
 
 
-
-
     // ----------------履歴ページ------------------
 
     &.history {
-        
+
+        .main-content {
+
+            padding-bottom: 100px;
+
+            .main-wrapper {
+
+
+                h1 {
+                    padding-top: 40px;
+                    @include font-base-large();
+                    text-align: center;
+
+                    @include respond-to("small") {
+                        padding-top: 100px;
+                        @include font-base-middle();
+                    }
+                }
+
+                #history-list {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 30px;
+                    @include margin-large();
+
+                    @include respond-to("small") {
+                        row-gap: 20px;
+                        @include margin-middle();
+                    }
+
+                    li {
+                        #history-date {
+                            @include font-base-date();
+
+                            @include respond-to("small") {
+                                @include font-base-date();
+
+                            }
+                        }
+
+                        .li-bg {
+                            width: 100%;
+                            height: auto;
+
+                            padding: 20px;
+                            @include margin-small();
+
+                            background-color: $color-white;
+                            border: 4px solid $color-black;
+
+                            @include respond-to("small") {
+                                padding: 20px 16px;
+                            }
+
+                            .text-wrapper {
+
+                                display: flex;
+                                align-items: center;
+                                column-gap: 10px;
+
+                                #result-img {
+                                    width: 70px;
+                                    height: 34px;
+
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+
+                                    @include font-base-middle();
+                                    color: $color-white;
+                                    background-color: $color-red;
+
+                                    @include respond-to("small") {
+                                        width: 60px;
+                                        height: 30px;
+                                        @include font-base-large-sp();
+                                    }
+                                }
+
+                                #result-text {
+                                    @include font-base-small();
+
+                                    @include respond-to("small") {
+                                        @include font-base-middle-sp();
+                                    }
+                                }
+
+                            }
+
+                            #lucky-wrapper {
+                                @include margin-small();
+
+                                @include respond-to("small") {
+                                    margin-top: 4px;
+                                }
+
+                                #lucky-item {
+                                    @include font-base-small();
+
+                                    @include respond-to("small") {
+                                        @include font-base-middle-sp();
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                }
+
+                .button-main {
+                    @include font-base-middle();
+                    @include margin-large();
+                    text-align: center;
+
+                    padding-bottom: 100px;
+
+                    @include respond-to("small") {
+                        @include font-base-middle-sp();
+                        @include margin-middle();
+                    }
+
+                    @include respond-to("middle") {
+                        padding-bottom: 0;
+                    }
+
+                    &:hover {
+                        color: $color-red
+                    }
+
+                }
+
+                .button-middle {
+                    @include respond-to("middle") {
+                        padding-bottom: 100px;
+                    }
+                }
+
+            }
+        }
+
+
     }
 
     // ----------------履歴ページ------------------
