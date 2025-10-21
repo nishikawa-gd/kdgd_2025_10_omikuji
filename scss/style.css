@@ -64,6 +64,48 @@ body a {
   animation: first-rotate 1s ease-in-out forwards, shake-loop 1.5s ease-in-out 1s infinite;
 }
 
+.result {
+  background: #EF6B45;
+}
+.result .maincontents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.result .maincontents .btn-group {
+  display: flex;
+}
+.result .maincontents .btn-group .btn {
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 10px solid #ff9900;
+  width: 120px;
+  height: 450px;
+  background: #FFEED2;
+  font-size: 50px;
+}
+.result .maincontents .js-result-img-wrapper img {
+  width: 323px;
+  height: auto;
+}
+.result .maincontents .auto-text {
+  background: #fff;
+  display: flex;
+}
+.result .maincontents .auto-text #result-text {
+  font-size: 30px;
+  writing-mode: vertical-rl;
+}
+.result .maincontents .auto-text #lucky-wrapper {
+  font-size: 30px;
+  writing-mode: vertical-rl;
+}
+.result .maincontents .auto-text #lucky-wrapper p {
+  font-size: 30px;
+}
+
 @keyframes first-rotate {
   0% {
     transform: rotate(0deg);
@@ -90,5 +132,15 @@ body a {
   }
   100% {
     transform: rotate(-150deg) translateY(0);
+  }
+}
+@keyframes slideout-down {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
   }
 }/*# sourceMappingURL=style.css.map */

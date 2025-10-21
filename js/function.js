@@ -1,6 +1,6 @@
 
 
-$(function() {
+$(function () {
 	function init() {
 		handlePlayPage();
 		handleResultPage();
@@ -19,7 +19,7 @@ function handlePlayPage() {
 	if (!$('body').hasClass('play')) return;
 
 	// show-resultボタン押下時の処理
-	$('#show-result').on('click', function(e) {
+	$('#show-result').on('click', function (e) {
 
 		// デフォルトの動作をキャンセル
 		e.preventDefault();
@@ -34,7 +34,7 @@ function handlePlayPage() {
 
 		// 履歴保存
 		const history = JSON.parse(localStorage.getItem('omikujiHistory') || '[]');
-		
+
 		// 履歴に追加
 		history.push({ result, lucky, date: new Date().toLocaleString() });
 		// 履歴をlocalStorageに保存
@@ -51,7 +51,7 @@ function handlePlayPage() {
 
 // ===== 結果ページの処理 =====
 function handleResultPage() {
-	
+
 	// bodyにresultクラスがなければ終了
 	if (!$('body').hasClass('result')) return;
 
@@ -96,9 +96,9 @@ function handleHistoryPage() {
 		);
 		$list.append($li);
 	});
-	
+
 	// 履歴削除ボタン処理
-	$('#clear-history').on('click', function() {
+	$('#clear-history').on('click', function () {
 		if (confirm('履歴をすべて削除しますか？')) {
 			localStorage.removeItem('omikujiHistory');
 			$list.empty();
@@ -106,4 +106,13 @@ function handleHistoryPage() {
 	});
 }
 
-
+document.addEventListener("DOMContentLoaded", () => {
+	if (document.body.classList.contains("play")) {
+		setTimeout(() => {
+			document.body.classList.add("slide-out");
+			setTimeout(() => {
+				window.location.href = "result.html"
+			}, 800);
+		}, 3000);
+	}
+});
