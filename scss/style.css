@@ -97,22 +97,28 @@
     transform: translateY(0) rotate(0deg);
   }
   10% {
-    transform: translateY(-50px) rotate(10deg); /* 叩かれて少し浮く */
+    transform: translateY(-50px) rotate(10deg);
+    /* 叩かれて少し浮く */
   }
   25% {
-    transform: translate(-60px, 40px) rotate(-40deg); /* 左に倒れ始め */
+    transform: translate(-60px, 40px) rotate(-40deg);
+    /* 左に倒れ始め */
   }
   45% {
-    transform: translate(-120px, 80px) rotate(-90deg); /* 横に転がる */
+    transform: translate(-120px, 80px) rotate(-90deg);
+    /* 横に転がる */
   }
   60% {
-    transform: translate(-140px, 85px) rotate(-100deg); /* ボテッと倒れる */
+    transform: translate(-140px, 85px) rotate(-100deg);
+    /* ボテッと倒れる */
   }
   75% {
-    transform: translate(-130px, 80px) rotate(-95deg); /* 小さく戻る反動 */
+    transform: translate(-130px, 80px) rotate(-95deg);
+    /* 小さく戻る反動 */
   }
   90% {
-    transform: translate(-140px, 85px) rotate(-100deg); /* 安定して止まる */
+    transform: translate(-140px, 85px) rotate(-100deg);
+    /* 安定して止まる */
   }
   100% {
     transform: translate(-140px, 85px) rotate(-100deg);
@@ -193,41 +199,40 @@
   text-decoration: none;
 }
 
-body.history {
+.history {
   background-image: url(../images/top/main-back.png);
-  background-size: cover;
   height: 100%;
 }
-body.history .inner {
+.history .inner {
   width: 1000px;
   margin: 0 auto;
 }
-body.history .inner h1 img {
+.history .inner h1 img {
   width: 300px;
   margin-top: 50px;
   margin-bottom: 20px;
 }
-body.history .inner #history-list {
+.history .inner #history-list {
   width: 1000px;
   margin: 0 auto;
   padding: 0px;
   background-color: rgba(255, 255, 255, 0.8);
 }
-body.history .inner #history-list li {
+.history .inner #history-list li {
   list-style: none;
   padding: 30px;
   border-bottom: 1px solid #000;
 }
-body.history .inner #history-list li:first-child {
+.history .inner #history-list li:first-child {
   border-top: 1px solid #000;
 }
-body.history .inner #history-list strong {
+.history .inner #history-list strong {
   color: #AE2727;
 }
-body.history .inner p {
+.history .inner p {
   text-align: center;
 }
-body.history .inner p #clear-history {
+.history .inner p #clear-history {
   background: none;
   border: none;
   border-bottom: #AE2727 1px solid;
@@ -237,7 +242,7 @@ body.history .inner p #clear-history {
   color: #AE2727;
   text-decoration: none;
 }
-body.history .inner .modoru-btn {
+.history .inner .modoru-btn {
   background-color: #AE2727;
   width: 390px;
   padding-top: 10px;
@@ -248,7 +253,7 @@ body.history .inner .modoru-btn {
   margin-top: 2%;
   margin-bottom: 50px;
 }
-body.history .inner .modoru-btn a {
+.history .inner .modoru-btn a {
   color: #DDB32B;
   font-size: 30px;
   font-weight: bold;
