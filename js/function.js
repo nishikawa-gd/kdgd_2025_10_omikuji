@@ -10,6 +10,15 @@ $(function () {
 });
 
 
+$(function () {
+	$(".hammer").addClass("swing");
+
+	$(".hammer").on("animationend", function () {
+		$(".daruma").addClass("fall");
+	});
+});
+
+
 
 // ===== 演出ページの処理 =====
 function handlePlayPage() {
