@@ -3,14 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <title>おみくじ履歴</title>
+  <link rel="stylesheet" href="css/destyle.css">
+  <link rel="stylesheet" href="scss/style.css">
   <script src="js/jquery-3.7.1.min.js"></script>
   <script src="js/settings.js"></script>
   <script src="js/function.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
 </head>
+
 <body class="history">
-  <h1>履歴</h1>
-  <ul id="history-list"></ul>
-  <p><button id="clear-history">履歴を削除</button></p>
-  <p><a href="index.html">トップに戻る</a></p>
+  <div class="inner">
+    <div class="cotainer">
+
+      <h1>履歴</h1>
+
+      <ul id="history-list"></ul>
+
+    </div>
+
+    <div class="history_btn2">
+      <p>
+        <button id="clear-history">
+          りれきをけす
+        </button>
+      </p>
+
+      <p class="top_btn">
+        <a href="index.html">
+          トップにもどる
+        </a>
+      </p>
+
+    </div>
+
+  </div>
 </body>
 </html>
