@@ -105,14 +105,3 @@ function handleHistoryPage() {
 		}
 	});
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-	if (document.body.classList.contains("play")) {
-		setTimeout(() => {
-			document.body.classList.add("slide-out");
-			setTimeout(() => {
-				window.location.href = "result.html"
-			}, 800);
-		}, 3000);
-	}
-});
