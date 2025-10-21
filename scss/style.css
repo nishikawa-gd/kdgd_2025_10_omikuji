@@ -66,16 +66,36 @@ body a {
 
 .result {
   background: #EF6B45;
-}
-.result .maincontents {
-  display: flex;
+  min-height: 100vh;
   justify-content: center;
   align-items: center;
 }
-.result .maincontents .btn-group {
-  display: flex;
+.result h1 {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 70px;
+  left: 50%;
+  font-size: 80px;
+  color: #fff;
 }
-.result .maincontents .btn-group .btn {
+.result .wrapper {
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.result .wrapper .maincontents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  margin: 0 auto;
+}
+.result .wrapper .maincontents .btn-group {
+  display: flex;
+  gap: 30px;
+}
+.result .wrapper .maincontents .btn-group .btn {
   font-size: 50px;
   display: flex;
   justify-content: center;
@@ -86,23 +106,30 @@ body a {
   background: #FFEED2;
   font-size: 50px;
 }
-.result .maincontents .js-result-img-wrapper img {
-  width: 323px;
+.result .wrapper .maincontents .js-result-img-wrapper img {
+  width: 400px;
   height: auto;
 }
-.result .maincontents .auto-text {
-  background: #fff;
+.result .wrapper .maincontents .auto-text {
   display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  width: 298px;
+  height: 450px;
+  background: #fff;
 }
-.result .maincontents .auto-text #result-text {
+.result .wrapper .maincontents .auto-text #result-text {
   font-size: 30px;
   writing-mode: vertical-rl;
 }
-.result .maincontents .auto-text #lucky-wrapper {
+.result .wrapper .maincontents .auto-text #lucky-wrapper {
+  display: flex;
+  gap: 10px;
   font-size: 30px;
   writing-mode: vertical-rl;
 }
-.result .maincontents .auto-text #lucky-wrapper p {
+.result .wrapper .maincontents .auto-text #lucky-wrapper p {
   font-size: 30px;
 }
 
