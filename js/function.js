@@ -1,6 +1,6 @@
 
 
-$(function() {
+$(function () {
 	function init() {
 		handlePlayPage();
 		handleResultPage();
@@ -19,7 +19,7 @@ function handlePlayPage() {
 	if (!$('body').hasClass('play')) return;
 
 	// show-resultボタン押下時の処理
-	$('#show-result').on('click', function(e) {
+	$('#show-result').on('click', function (e) {
 
 		// デフォルトの動作をキャンセル
 		e.preventDefault();
@@ -34,7 +34,7 @@ function handlePlayPage() {
 
 		// 履歴保存
 		const history = JSON.parse(localStorage.getItem('omikujiHistory') || '[]');
-		
+
 		// 履歴に追加
 		history.push({ result, lucky, date: new Date().toLocaleString() });
 		// 履歴をlocalStorageに保存
@@ -51,59 +51,81 @@ function handlePlayPage() {
 
 // ===== 結果ページの処理 =====
 function handleResultPage() {
-	
+
 	// bodyにresultクラスがなければ終了
 	if (!$('body').hasClass('result')) return;
 
 	// localStorageから現在のおみくじ結果を取得
 	const data = JSON.parse(localStorage.getItem('omikujiCurrent'));
-	// データがなければ終了
 	if (!data) return;
 
-	// 結果表示
-	$('#result-text').text(`${data.result.type}：${data.result.text}`);
-	// 画像の設定
-	$('#result-img').attr('src', data.result.img).attr('alt', data.result.type);
+	// 結果画像の設定
+	$('#result-img')
+		.attr('src', data.result.img)
+		.attr('alt', data.result.type || 'おみくじ結果');
 
-	// 結果に応じたクラスをbodyに追加	
-	$('body').addClass('js-' + data.result.type);
+	// 結果に応じたクラスをbodyに追加
+	if (data.result && data.result.type) {
+		$('body').addClass('js-' + data.result.type);
+	}
 
 	// ラッキーアイテムの表示（設定がONの場合のみ）
 	if (settings.showLuckyItem && data.lucky) {
-		$('#lucky-item').text(data.lucky);
+		// data.lucky が { img: "～" } の形ならそのまま使う
+		if (typeof data.lucky === 'object' && data.lucky.img) {
+			$('#lucky-item-img')
+				.attr('src', data.lucky.img)
+				.attr('alt', 'ラッキーアイテム画像');
+		}
+		// data.lucky が文字列だった場合のフォールバック
+		else if (typeof data.lucky === 'string') {
+			$('#lucky-item-img')
+				.attr('src', data.lucky)
+				.attr('alt', 'ラッキーアイテム画像');
+		}
 	} else {
 		$('#lucky-wrapper').remove();
 	}
 }
 
 
-// ===== 履歴ページの処理 =====
-function handleHistoryPage() {
 
-	// bodyにhistoryクラスがなければ終了
+// 履歴ページ処理
+function handleHistoryPage() {
 	if (!$('body').hasClass('history')) return;
 
-	// localStorageから履歴を取得
 	const history = JSON.parse(localStorage.getItem('omikujiHistory') || '[]');
-
-	// 履歴がなければメッセージを表示して終了
 	const $list = $('#history-list');
 
+	if (history.length === 0) {
+		$list.append('<li>履歴はまだありません。</li>');
+		return;
+	}
+
 	history.forEach(item => {
+		let luckyText = '';
+		if (item.lucky) {
+			luckyText = ` (ラッキーアイテム: ${item.lucky.name})`;
+		}
+
 		const $li = $('<li>').html(
-			`${item.date}：<strong>${item.result.type}</strong> - ${item.result.text}` +
-			(item.lucky ? ` (ラッキーアイテム: ${item.lucky})` : '')
+			`${item.date}：<strong>${item.result.type}</strong> - ${item.result.text}${luckyText}`
 		);
 		$list.append($li);
 	});
-	
-	// 履歴削除ボタン処理
-	$('#clear-history').on('click', function() {
+
+	$('#clear-history').on('click', function () {
 		if (confirm('履歴をすべて削除しますか？')) {
 			localStorage.removeItem('omikujiHistory');
 			$list.empty();
+			$list.append('<li>履歴はまだありません。</li>');
 		}
 	});
 }
+
+$(function () {
+	handleHistoryPage();
+});
+
 
 
