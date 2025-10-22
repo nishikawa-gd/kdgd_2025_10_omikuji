@@ -106,18 +106,11 @@ $color-white: #fff;
 
 body {
     #bg {
-        // width: 100vw;
-        // height: 100vh;
-
         background-image: url(../images/top/kumo-01.png), url(../images/top/kumo-02.png), url(../images/top/kumo-03.png);
         background-repeat: no-repeat, no-repeat, no-repeat;
         background-size: auto 158px, auto 270px, auto 156px;
         background-position: left -100px top 340px, right -80px top 20px, right -70px top 680px;
         background-color: $color-base;
-
-
-        // background-attachment: fixed;
-
 
 
         #menu {
@@ -917,8 +910,91 @@ body {
                         padding-bottom: 100px;
                     }
                 }
-
             }
+
+            .clear-wrapper {
+                position: absolute;
+                width: 100vw;
+                height: 100vh;
+                top: 0;
+
+                display: none;
+                align-items: center;
+                justify-content: center;
+
+                background-color: rgba($color: #000000, $alpha: 0.3);
+
+                .clear-content {
+                    width: 360px;
+                    height: auto;
+
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    row-gap: 20px;
+
+                    padding: 20px;
+
+                    background-color: $color-white;
+                    border: 4px solid $color-black;
+
+                    @include respond-to("small") {
+                        width: 260px;
+                        border: 3px solid $color-black;
+                        row-gap: 10px;
+                    }
+
+                    .alert-text {
+                        @include font-base-small();
+
+                        @include respond-to("small") {
+                            @include font-base-middle-sp();
+                        }
+                    }
+
+                    .button-block {
+                        display: flex;
+                        column-gap: 20px;
+
+                        .button-clear {
+                            width: auto;
+                            height: 40px;
+
+                            padding: 0 20px;
+                            border: 3px solid $color-red;
+                            background-color: $color-white;
+                            color: $color-red;
+
+                            @include font-base-middle();
+
+                            @include respond-to("small") {
+                                @include font-base-large-sp();
+                            }
+
+                            &.button-cancel {
+                                &:hover {
+                                    background-color: $color-red;
+                                    color: $color-white;
+                                }
+                            }
+
+                            &.button-ok {
+                                &:hover {
+                                    background-color: $color-black;
+                                    border: 3px solid $color-black;
+
+                                    color: $color-white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .clear-wrapper-on {
+                display: flex;
+            }
+
         }
 
 

@@ -108,11 +108,21 @@ function handleHistoryPage() {
 	});
 
 	// 履歴削除ボタン処理
+	$('#clear-history-button').on('click', function () {
+		// 確認ダイアログを表示
+		$('.clear-wrapper').addClass('clear-wrapper-on');
+	});
+
+	// OKボタンが押されたときの処理
 	$('#clear-history').on('click', function () {
-		if (confirm('履歴をすべて削除しますか？')) {
-			localStorage.removeItem('omikujiHistory');
-			$list.empty();
-		}
+		localStorage.removeItem('omikujiHistory'); // 履歴削除
+		$list.empty(); // 履歴表示をクリア
+		$('.clear-wrapper').removeClass('clear-wrapper-on'); // ダイアログを閉じる
+	});
+
+	// キャンセルボタンが押されたときの処理
+	$('.button-cancel').on('click', function () {
+		$('.clear-wrapper').removeClass('clear-wrapper-on'); // ダイアログを閉じる
 	});
 }
 
