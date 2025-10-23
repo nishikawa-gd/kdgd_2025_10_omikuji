@@ -1,3 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background-color: #D50100;
+  background-color: #0095D5;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+body .main-text {
+  width: 600px;
+  text-align: center;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  padding: 20px 0;
+}
+body .main-text p {
+  font-size: 35px;
+  color: #F6B237;
+  font-family: "Hiragino Mincho Pro";
+}
+body .main-text h1 {
+  font-size: 85px;
+  font-weight: lighter;
+  color: #F6B237;
+  font-family: "Hiragino Mincho Pro";
+}
+body .main-visual .hamon-top {
+  position: absolute;
+  top: -53px;
+  right: -100px;
+}
+body .main-visual .hamon-bottom {
+  position: absolute;
+  bottom: -98px;
+  left: -77px;
 }/*# sourceMappingURL=style.css.map */
