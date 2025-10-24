@@ -1,0 +1,53 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.index{
+    background-size: cover;
+    background-color: #FFF9EE;
+    width: 100%;
+    height: 100px;
+}
+
+.main-visual{
+    margin-top:233px ;
+    margin-bottom: 42px;
+}
+
+.main-visual img{
+    margin: auto;
+  display: block;
+    width: 1095px;
+    height: 385px;
+}
+
+.top-dogs img{
+    margin: 0 auto;
+    display: block;
+    width: 732px;
+    height: 327px;
+}
+
+.top-button svg{
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 47px;
+}
+
+.bottom img{
+    position: absolute;
+    z-index: -1;
+    bottom: -36em;
+    width: 1447px;
+    height: 252px;
+}
+
+.rireki-button{
+    margin-top:42px ;
+}
+
+.rireki-button svg{
+    display: block;
+    margin: auto;
+}
