@@ -2,10 +2,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 10px solid #ff9900;
+    border: 10px solid $button-border;
     width: 120px;
     height: 450px;
-    background: #FFEED2;
+    background: $button-color;
     font-size: 50px;
 }
 
@@ -15,10 +15,35 @@
     transition: 0.5s;
 }
 
+@mixin respond-to($breakpoint) {
+    @if $breakpoint ==small {
+        @media (max-width: 767px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==medium {
+        @media (min-width: 768px) and (max-width: 1024px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==large {
+        @media (min-width: 1025px) {
+            @content;
+        }
+    }
+}
+
+$bg-color: #EF6B45;
+$button-color: #FFEED2;
+$button-border: #ff9900;
+$main-font: "Shippori Mincho", serif;
+
 body {
     position: relative;
 
-    background-color: #EF6B45;
+    background-color: $bg-color;
 
     .shippori-mincho-regular {
         font-family: "Shippori Mincho", serif;
@@ -63,7 +88,14 @@ body {
             justify-content: center;
             align-items: center;
 
+            @include respond-to("small") {
+                flex-direction: column;
+            }
+
             .main-visual {
+                @include respond-to("small") {
+                    order: 1;
+                }
 
                 img {
                     width: 320px;
@@ -78,13 +110,19 @@ body {
                 &:hover {
                     @include btnhover;
                 }
+
+                @include respond-to("small") {
+                    width: 300px;
+                    height: 60px;
+                    font-size: 30px;
+                }
             }
         }
     }
 }
 
 .play {
-    background: #EF6B45;
+    background: $bg-color;
 
     .animation {
         position: absolute;
@@ -102,17 +140,22 @@ body {
 
     #show-result {
         position: absolute;
-        top: 50%;
+        top: 830px;
         left: 50%;
         transform: translate(-50%, 0%);
         writing-mode: inherit;
         font-size: 50px;
         color: #fff;
+
+        &:hover {
+            color: yellow;
+            transition: 0.8s;
+        }
     }
 }
 
 .result {
-    background: #EF6B45;
+    background: $bg-color;
     min-height: 100vh;
     justify-content: center;
     align-items: center;
@@ -187,6 +230,62 @@ body {
                         font-size: 30px;
                     }
                 }
+            }
+        }
+    }
+}
+
+
+.history {
+    h1 {
+        text-align: center;
+        font-size: 80px;
+        color: #fff;
+        margin-top: 80px;
+    }
+
+    #history-list {
+        margin-top: 50px;
+        justify-content: center;
+        font-size: 20px;
+        color: #fff;
+    }
+
+    .list-wrapper {
+        text-align: center;
+
+        ul {
+            display: inline-flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: left;
+            margin: 0 auto;
+        }
+    }
+
+    p {
+        button {
+            display: block;
+            margin: 50px auto 0;
+        }
+    }
+
+    a {
+        margin: 50px auto 0;
+
+        p {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 10px solid $button-border;
+            width: 300px;
+            height: 70px;
+            writing-mode: horizontal-tb;
+            font-size: 30px;
+            background: $button-color;
+
+            &:hover {
+                @include btnhover()
             }
         }
     }
