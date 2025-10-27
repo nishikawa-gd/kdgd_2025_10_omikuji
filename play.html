@@ -3,15 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <title>おみくじ演出</title>
+  <link rel="stylesheet" href="scss/style.css">
   <script src="js/jquery-3.7.1.min.js"></script>
   <script src="js/settings.js"></script>
   <script src="js/function.js"></script>
 </head>
 <body class="play">
-  <h1>おみくじ演出</h1>
-  <div class="animation">
-    <img src="images/play/play.png" alt="おみくじを振る演出">
+  <div class="main-visual">
+    <img class="hamon-top" src="images/top/hamon.png">
+    <img class="hamon-bottom" src="images/top/hamon-bottom.png">
   </div>
-  <p><a href="#" id="show-result">結果を見る</a></p>
+  <!-- 波紋 -->
+  <div class="ripple-wrap">
+    <div class="ripple ripple1"><img src="images/play/ripple 1.png" width="170" height="170"></div>
+    <div class="ripple ripple2"><img src="images/play/ripple 2.png" width="320" height="320"></div>
+    <div class="ripple ripple3"><img src="images/play/ripple 3.png" width="470" height="470"></div>
+  </div>
+
+  <!-- おみくじボタン -->
+  <p><button id="show-result" class="draw-btn">おみくじを引く</button></p>
 </body>
 </html>

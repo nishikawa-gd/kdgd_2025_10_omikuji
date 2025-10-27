@@ -1,13 +1,26 @@
 // おみくじ結果リスト
 const omikujiResults = [
-  { type: "大吉", text: "最高の一日になります！", img: "images/result/daikichi.png" },
-  { type: "中吉", text: "いいことがあるかも！", img: "images/result/chukichi.png" },
-  { type: "小吉", text: "少し嬉しい出来事が…", img: "images/result/shokichi.png" },
-  { type: "凶", text: "気をつけて過ごしましょう", img: "images/result/kyo.png" }
+  { type: "大吉",  img: "images/result/daikichi.png" },
+  { type: "中吉",  img: "images/result/chukichi.png" },
+  { type: "小吉",  img: "images/result/shokichi.png" },
+  { type: "吉", img: "images/result/kichi.png"},
+  { type: "末吉", img: "images/result/suekichi.png"},
+  { type: "凶",  img: "images/result/kyo.png" }
 ];
 
-// ラッキーアイテム
-const luckyItems = ["傘", "本", "スマホ", "鍵", "花", "お茶"];
+const data = {
+  result: omikujiResults[Math.floor(Math.random() * omikujiResults.length)]
+};
+// ラッキーカラー
+const colorMap = {
+  "赤": "#e53935",
+  "青": "#1e88e5",
+  "緑": "#43a047",
+  "黄色": "#fdd835",
+  "紫": "#8e24aa",
+  "ピンク": "#ec407a"
+};
+
 
 // ラッキーアイテムON/OFF
 const settings = {

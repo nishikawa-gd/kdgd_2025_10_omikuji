@@ -13,40 +13,47 @@ $(function() {
 
 // ===== 演出ページの処理 =====
 function handlePlayPage() {
+  if (!$('body').hasClass('play')) return;
 
+  $('#show-result').on('click', function (e) {
+    e.preventDefault();
 
-	// bodyにplayクラスがなければ終了
-	if (!$('body').hasClass('play')) return;
+    const $playArea = $('body.play');
+    $playArea.removeClass('animate');
+    setTimeout(() => $playArea.addClass('animate'), 50);
 
-	// show-resultボタン押下時の処理
-	$('#show-result').on('click', function(e) {
+    // === 🌊 波紋アニメーションを順に表示 ===
+    $('.ripple img').hide(); // 最初は全部非表示にしておく
 
-		// デフォルトの動作をキャンセル
-		e.preventDefault();
+    $('.ripple1 img').fadeIn(600).delay(400).fadeOut(800);
+    setTimeout(() => {
+      $('.ripple2 img').fadeIn(600).delay(400).fadeOut(800);
+    }, 500);
+    setTimeout(() => {
+      $('.ripple3 img').fadeIn(600).delay(400).fadeOut(800);
+    }, 1000);
 
-		// おみくじ結果とラッキーアイテムをランダムに選択
-		const result = omikujiResults[Math.floor(Math.random() * omikujiResults.length)];
+    // === 🎴 おみくじ結果処理 ===
+    const result = omikujiResults[Math.floor(Math.random() * omikujiResults.length)];
+    const colors = Object.keys(colorMap);
+    const luckyColor = settings.showLuckyItem
+      ? colors[Math.floor(Math.random() * colors.length)]
+      : null;
 
-		// ラッキーアイテムの選択（設定がONの場合のみ）
-		const lucky = settings.showLuckyItem
-			? luckyItems[Math.floor(Math.random() * luckyItems.length)]
-			: null;
+    // 履歴保存
+    const history = JSON.parse(localStorage.getItem('omikujiHistory') || '[]');
+    history.push({ result, lucky: luckyColor, date: new Date().toLocaleString() });
+    localStorage.setItem('omikujiHistory', JSON.stringify(history));
+    localStorage.setItem('omikujiCurrent', JSON.stringify({ result, lucky: luckyColor }));
 
-		// 履歴保存
-		const history = JSON.parse(localStorage.getItem('omikujiHistory') || '[]');
-		
-		// 履歴に追加
-		history.push({ result, lucky, date: new Date().toLocaleString() });
-		// 履歴をlocalStorageに保存
-		localStorage.setItem('omikujiHistory', JSON.stringify(history));
-
-		// 現在結果保存
-		localStorage.setItem('omikujiCurrent', JSON.stringify({ result, lucky }));
-
-		// 結果ページへ遷移
-		window.location.href = 'result.html';
-	});
+    // 3.5秒後に結果ページへ（波紋が終わってから）
+    setTimeout(() => {
+      window.location.href = 'result.html';
+    }, 2700);
+  });
 }
+
+
 
 
 // ===== 結果ページの処理 =====
@@ -60,19 +67,24 @@ function handleResultPage() {
 	// データがなければ終了
 	if (!data) return;
 
-	// 結果表示
-	$('#result-text').text(`${data.result.type}：${data.result.text}`);
-	// 画像の設定
-	$('#result-img').attr('src', data.result.img).attr('alt', data.result.type);
 
+	// 画像の設定
+	$('#result-img')
+  		.attr('src', data.result.img)
+  		.attr('alt', data.result.type);
+
+	$('#result-text').text(data.result.type);
 	// 結果に応じたクラスをbodyに追加	
 	$('body').addClass('js-' + data.result.type);
 
 	// ラッキーアイテムの表示（設定がONの場合のみ）
 	if (settings.showLuckyItem && data.lucky) {
-		$('#lucky-item').text(data.lucky);
+  		const color = colorMap[data.lucky] || "black"; // ←ここでcolorを定義！
+
+		  $('#lucky-item').text(data.lucky);
+ 		  $('#lucky-circle').css('background-color', color); // 丸の色を設定
 	} else {
-		$('#lucky-wrapper').remove();
+  		$('#lucky-wrapper').remove();
 	}
 }
 
