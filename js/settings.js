@@ -1,13 +1,30 @@
-// おみくじ結果リスト
+// おみくじ結果リスト（ラッキーアイテムを各結果に紐付け、画像情報を削除）
 const omikujiResults = [
-  { type: "大吉", text: "最高の一日になります！", img: "images/result/daikichi.png" },
-  { type: "中吉", text: "いいことがあるかも！", img: "images/result/chukichi.png" },
-  { type: "小吉", text: "少し嬉しい出来事が…", img: "images/result/shokichi.png" },
-  { type: "凶", text: "気をつけて過ごしましょう", img: "images/result/kyo.png" }
+  { 
+    type: "光ノ導き", 
+    text: "見てごらんなさい、貴方の前に運命の光が差し込んでいるわ。今日は、全てが順調に流れる日。小さな奇跡が、自然と貴方に微笑むでしょう。", 
+    luckyItem: "祗園先生のメガネを手にすれば、運命の光がもっとキラキラ輝くわよ。"
+    // img: "images/result/daikichi.png" を削除
+  },
+  { 
+    type: "月光ノ祝福", 
+    text: "ほら…月の光が貴方の背中をそっと押しているのが見えるわ。今日の運気は静かに流れ、ささやかな奇跡が訪れるでしょう。焦らずに、光に身を任せて。", 
+    luckyItem: "小畑先生のDTPの授業を受ければ、月光の流れがもっとキラリと輝くのが感じられるわ。"
+    // img: "images/result/chukichi.png" を削除
+  },
+  { 
+    type: "影ノ囁き", 
+    text: "影が静かに貴方の後ろで揺れているわ。注意深く歩けば、ほんの少しの幸せが自然と寄ってくるでしょう。小さな選択が、後に大きな吉となるかもしれないわ。", 
+    luckyItem: "祗園先生にチョコを渡せば、影ノ囁きが少し明るくなって、貴方の運もそっと後押ししてくれるわ。"
+    // img: "images/result/shokichi.png" を削除
+  },
+  { 
+    type: "虚空ノ警鐘", 
+    text: "ほら…虚空があなたを見ているわよ。今日は不用意に動かない方が吉。耳を澄ませば、運命の警鐘がかすかに鳴り、貴方を守ろうとしているのがわかるわ。", 
+    luckyItem: "祗園先生と小畑先生に貴方がボケると、2人の的確なツッコミで虚空も逃げていくわ。"
+    // img: "images/result/kyo.png" を削除
+  }
 ];
-
-// ラッキーアイテム
-const luckyItems = ["傘", "本", "スマホ", "鍵", "花", "お茶"];
 
 // ラッキーアイテムON/OFF
 const settings = {

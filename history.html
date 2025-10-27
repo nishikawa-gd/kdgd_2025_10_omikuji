@@ -2,17 +2,28 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>おみくじ履歴</title>
+  <title>ソフィア先生の霊視の館</title>
   <script src="js/jquery-3.7.1.min.js"></script>
   <script src="js/settings.js"></script>
   <script src="js/function.js"></script>
-  <link href="css/reset.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap" rel="stylesheet">
+  <meta name=”viewport” content=”width=device-width, initial-scale=1.0″>
+  
 </head>
-<body class="history">
-  <h1>履歴</h1>
-  <ul id="history-list"></ul>
-  <p><button id="clear-history">履歴を削除</button></p>
-  <p><a href="index.html">トップに戻る</a></p>
+<body class="content history">
+  <div class="section-block">
+    <p class="ttl_result"><img src="images/history/ttl_history.png" alt="過去の運命"></p>
+    <div class="ttl_result_person">
+      <img src="images/result/result_person.png">
+    </div>
+    <div class="section history">
+      <ul id="history-list"></ul>
+    </div>
+    <div id="clear-history"><img src="images/history/btn_reset.png"></div>
+    <p class="back-to-top"><a href="index.html">トップに戻る</a></p>
+  </div>
 </body>
 </html>

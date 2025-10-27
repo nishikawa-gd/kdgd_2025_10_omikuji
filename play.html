@@ -2,18 +2,27 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>おみくじ演出</title>
+  <title>ソフィア先生の霊視の館</title>
   <script src="js/jquery-3.7.1.min.js"></script>
   <script src="js/settings.js"></script>
   <script src="js/function.js"></script>
-  <link href="css/reset.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap" rel="stylesheet">
+  <meta name=”viewport” content=”width=device-width, initial-scale=1.0″>
+  
 </head>
-<body class="play">
-  <h1>おみくじ演出</h1>
-  <div class="animation">
-    <img src="images/play/play.png" alt="おみくじを振る演出">
+<body class="content play">
+  <div class="section-block">
+    <div class="section play">
+      <p class="ttl_play_1 fade-item fade-item-2"><img src="images/play/ttl_play_1.png" alt="貴方の運命"></p>
+      <p class="ttl_play_2 fade-item fade-item-3"><img src="images/play/ttl_play_2.png" alt="視えたわ"></p> 
+      <p class="button play fade-item fade-item-4"><a href="result.html" id="show-result"><img src="images/play/btn_play.png" alt="運命を見る"></a></p>
+    </div>
+    <div class="main-visual play">
+      <img src="images/play/play_person.png" alt="ソフィア先生" class="fade-item fade-item-1"**>
+    </div>
   </div>
-  <p><a href="#" id="show-result">結果を見る</a></p>
 </body>
 </html>

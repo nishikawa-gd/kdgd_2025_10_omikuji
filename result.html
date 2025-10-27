@@ -2,27 +2,33 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>おみくじ結果</title>
+  <title>ソフィア先生の霊視の館</title>
   <script src="js/jquery-3.7.1.min.js"></script>
   <script src="js/settings.js"></script>
   <script src="js/function.js"></script>
-  <link href="css/reset.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap" rel="stylesheet">
+  <meta name=”viewport” content=”width=device-width, initial-scale=1.0″>
+  
 </head>
-<body class="result">
-  <h1>結果</h1>
-  <p id="result-text"></p>
-
-  <div class="js-result-img-wrapper">
-  <img id="result-img" src="" alt="結果画像">
+<body class="content result">
+  <div class="section-block">
+    <p class="ttl_result"><img src="images/result/ttl_result.png" alt="さぁ。これから二人で運命を辿る時間よ"></p>
+    <div class="ttl_result_person">
+      <img src="images/result/result_person.png">
+    </div>
+    <div class="section result">
+      <h1 id="result-type"></h1>
+      <p id="result-text"></p>
+      <div id="lucky-wrapper">
+        <p>【運命の一手】</p>
+        <p id="lucky-item"></p>
+      </div>
+    </div>
+    <p class="again"><a href="index.html"><img src="images/result/btn.png"></a></p>
+    <p class="look-history"><a href="history.html">過去の運命を振り返る</a></p>
   </div>
-
-  <div id="lucky-wrapper">
-    <p>ラッキーアイテム:</p>
-    <p id="lucky-item"></p>
-  </div>
-
-  <p><a href="index.html">もう一度引く</a></p>
-  <p><a href="history.html">履歴を見る</a></p>
 </body>
 </html>

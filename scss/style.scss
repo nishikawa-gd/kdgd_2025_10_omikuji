@@ -1,3 +1,293 @@
-body {
-    background-color: #F00;
+/* @keyframes の定義はグローバルに配置 */
+@keyframes poyopoyo {
+    0%, 40%, 60%, 80% {
+        transform: scale(1.0);
+    }
+    50%, 70% {
+        transform: scale(0.95);
+    }
 }
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* 開始: 透明 */
+  }
+  to {
+    opacity: 1; /* 終了: 完全表示 */
+  }
+}
+.content {
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url(../images/common/bg.png);
+}
+.section-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url(../images/common/bg_main.png);
+    background-size: cover;
+    font-family: Hina Mincho;
+    font-size: 14px;
+    color: #FEE4AA;
+    line-height: 21px;
+    letter-spacing: 5%;
+    width: 320px;
+    height: 600px;
+    z-index: 0;
+    .main-visual {
+        position: absolute;
+        z-index: -1;
+        top: 0px;
+        img {
+            width: 100%;
+            height: auto;
+        }
+        &.play {
+            top: 152px;
+        }
+    }
+    .main-visual {
+        &.top::before {
+            content: "";
+            position: absolute;
+            top: 170px;
+            right: 0px;
+            width: 20%;
+            height: 20%; 
+            background-image: url(../images/top/right_ttl.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 0;
+        }
+    }
+    .main-visual {
+        &.top::after {
+            content: "";
+            position: absolute;
+            top: 170px;
+            left: 22px;
+            width: 50%;
+            height: 50%;
+            background-image: url(../images/top/left_ttl.png);
+            background-size: contain; 
+            background-repeat: no-repeat;
+            z-index: 0;
+        }
+    }
+    .ttl_result {
+        // 画像タグに対してスタイルを適用
+        img {
+            width: 75%;
+            height: auto;
+            // 擬似要素は親セレクタ(img)の直後に記述
+        }
+    }
+    .ttl_result_person {
+        width: 138px;
+        height: 193px;
+        position: absolute;
+        top: 0;
+        right: 0px;
+    }
+    .ttl_result_person img {
+        width: 100%;
+        height: auto;
+    }
+    // playの演出
+    .fade-item {
+    opacity: 0;
+    }
+    .fade-item-1 {
+        /* アニメーション名 | 時間 | 変化の速さ | 遅延時間 | 繰り返し(1回) | 最終状態維持(forwards) */
+        animation: fadeIn 0.8s ease-in-out 0s 1 forwards;
+    }
+    /* ② 貴方の運命 */
+    .fade-item-2 {
+        /* 0.8秒遅延させて開始 */
+        animation: fadeIn 0.8s ease-in-out 0.8s 1 forwards;
+    }
+    /* ③ 視えたわ */
+    .fade-item-3 {
+        /* 1.6秒遅延させて開始 */
+        animation: fadeIn 0.8s ease-in-out 1.6s 1 forwards;
+    }
+
+    /* ④ ボタン (新規追加/修正) */
+    .fade-item-4 {
+        /* 2.4秒遅延させて開始 (③の終了後) */
+        /* fadeInアニメーションと poyopoyoアニメーションを併用します */
+        animation: 
+            /* 1. フェードイン (1回実行し、表示状態で維持) */
+            fadeIn 0.8s ease-in-out 2.4s 1 forwards, 
+            /* 2. ポヨポヨアニメーション (フェードインが完了してから無限に開始) */
+            poyopoyo 2s ease-out 3.2s infinite; 
+    }
+    // もう一度占うボタン
+    .again {
+        display: block;
+        text-align: center; 
+        position: relative;
+        top: -25px;
+        a {
+            display: inline-block; // 👈 aタグはインラインブロックにして中央寄せを維持
+        }
+
+        img {
+            width: 50%;
+            height: auto;
+        }
+    }
+    .look-history {
+        display: block;
+        position: relative;
+        top: -35px;
+        font-size: 14px;
+        line-height: 21px;
+        text-align: center;
+        a {
+            color: #FEE4AA;
+            letter-spacing: 5%;
+        }
+    }
+    #clear-history img{
+        display: block;
+        margin: 0 auto;
+        width: 75%;
+    }
+    .back-to-top {
+        position: relative;
+        font-size: 14px;
+        line-height: 21px;
+        text-align: center;
+        top: -10px;
+    }
+     .back-to-top a{
+        font-size: 14px;
+        line-height: 21px;
+        text-align: center;
+        color: #FEE4AA;
+    }
+}
+.section {
+    margin: 0 auto;
+    width: 300px;
+    position: relative; 
+    z-index: 1; 
+    
+    img {
+        width: 100%;
+    }
+    .button {
+        margin-top: 340px;
+        filter: drop-shadow(0px 0px 4px #FFFFFF); /* 0px 0px 4px 0px は無効な構文のため修正 */
+        // opacity: 1; 
+        // animation: poyopoyo 2s ease-out infinite;
+        &.play {
+            margin-top: 310px;
+        }
+    }
+    &.top {
+        .sub-keycopy img{
+            margin-top: 0px;
+        }
+        h1 img{
+            margin-top:-16px;
+        }
+        p {
+            text-align: center;
+        }
+        .link-history a{
+            color: #FEE4AA;
+        }
+        .link-history {
+            margin-top: -16px;
+            text-align: center; 
+        }
+    }
+    &.play {
+        .ttl_play_1 {
+            position: relative;
+            top: 40px;
+        }
+        .ttl_play_2 {
+            position: relative;
+            top: 300px;
+        }
+    }
+    &.result,
+    &.history {
+        position: relative;
+        width: 300px;
+        height: 345px;
+        top: -20px;
+        background-image: url(../images/result/frame_result.png);
+        background-size: cover;
+        h1#result-type {
+            position: relative;
+            font-size: 24px;
+            letter-spacing: 10%;
+            font-weight: 100;
+            color: #FFFFFF; 
+            text-align: center;
+            top: 24px;
+        }
+        h1#result-type::after {
+            content: "";
+            position: absolute;
+            top: 40px;
+            left: 5px;
+            background-image: url(../images/result/line.png);
+            background-size: cover;
+            width: 284px;
+            height: 1px;
+        }
+        p#result-text {
+            width: 252px;
+            position: relative;
+            font-size: 16px;
+            line-height: 23px;
+            letter-spacing: 5%;
+            color: #FFFFFF;
+            top: 48px;
+            left: 24px;
+        }
+        #lucky-wrapper {
+            margin: 0; 
+            padding: 0; 
+            color: #FFFFFF;
+
+            // 💡 2. #lucky-wrapper 内の全ての <p> タグの上下マージンをリセット
+            p {
+                width: 252px;
+                position: relative;
+                margin-top: 0;
+                margin-bottom: 0;
+                top: 48px;
+                left: 24px;
+                font-size: 16px;
+                line-height: 23px;
+            }
+        }
+        #history-list {
+            position: relative;
+            top: 40px;
+            left: -10px;
+            height: 260px; /* 適切な高さに調整 */
+            overflow-y: scroll; 
+            scrollbar-width: none;
+            justify-content: center;
+            &::-webkit-scrollbar {
+                display: none;    
+            }    /* Chrome, Safari, Opera */
+            li {
+                font-size: 16px;
+                color: #FFFFFF;
+                margin-bottom: 20px;
+                
+            }
+        }
+        
+    }
+}
+
