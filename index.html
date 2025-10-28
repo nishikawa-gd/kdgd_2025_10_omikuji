@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/reset.css" type="text/css">
+<link rel="stylesheet" href="scss/style.css" type="text/css">
 <head>
   <meta charset="UTF-8">
   <title>おみくじアプリ</title>
@@ -8,11 +15,17 @@
   <script src="js/function.js"></script>
 </head>
 <body class="index">
-  <h1>おみくじアプリだよ</h1>
+  <div class="page_inner">
+  <h1 class="page_ttl"><img src="images/top/hero_ttl.png" alt="今日の運勢は…" width="650" height="107"></h1>
   <div class="main-visual">
-    <img src="images/top/mainvisual.png" alt="メインビジュアル">
+    <picture>
+      <source srcset="images/top/hero_sp.jpg" alt="メインビジュアル" width="751" height="1201" media="(max-width: 559px)" />
+       <img src="images/top/hero_pc.jpg" alt="メインビジュアル" width="1920" height="1080">
+    </picture>
   </div>
-  <p><a href="play.html">おみくじを引く</a></p>
-  <p><a href="history.html">履歴を見る</a></p>
+  <p class="page_contents"><img src="images/top/hero_img.png" alt="おみくじを持った招き猫のイラスト" width="450" height="420"></p>
+  <p class="main_btn"><a href="play.html">おみくじを引く</a></p>
+  <p class="history_btn"><a href="history.html">履歴を見る</a></p>
+</div>
 </body>
 </html>
