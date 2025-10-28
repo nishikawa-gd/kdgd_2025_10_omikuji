@@ -61,7 +61,7 @@ function handleResultPage() {
 	if (!data) return;
 
 	// 結果表示
-	$('#result-text').text(`${data.result.type}：${data.result.text}`);
+	$('#result-text');
 	// 画像の設定
 	$('#result-img').attr('src', data.result.img).attr('alt', data.result.type);
 
@@ -69,11 +69,11 @@ function handleResultPage() {
 	$('body').addClass('js-' + data.result.type);
 
 	// ラッキーアイテムの表示（設定がONの場合のみ）
-	if (settings.showLuckyItem && data.lucky) {
-		$('#lucky-item').text(data.lucky);
-	} else {
-		$('#lucky-wrapper').remove();
-	}
+	// if (settings.showLuckyItem && data.lucky) {
+	// 	$('#lucky-item').text(data.lucky);
+	// } else {
+	// 	$('#lucky-wrapper').remove();
+	// }
 }
 
 
