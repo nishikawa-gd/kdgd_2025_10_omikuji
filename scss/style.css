@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   position: relative;
   background-color: #EF6B45;
@@ -19,6 +20,10 @@ body a {
   min-height: 100vh;
   justify-content: center;
   align-items: center;
+  background-image: url(../images/top/bg4.png);
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
 }
 .index h1 {
   position: absolute;
@@ -53,6 +58,8 @@ body a {
 .index .wrapper .maincontents .main-visual img {
   width: 320px;
   height: auto;
+  animation: expandIn 1s ease-in-out;
+  animation: hotline-miami 1s ease-in-out;
 }
 .index .wrapper .maincontents .playbtn,
 .index .wrapper .maincontents .historybtn {
@@ -82,6 +89,11 @@ body a {
 
 .play {
   background: #EF6B45;
+  background-image: url(../images/top/bg4.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  min-height: 100vh;
 }
 .play .animation {
   position: absolute;
@@ -110,6 +122,10 @@ body a {
 
 .result {
   background: #EF6B45;
+  background-image: url(../images/top/bg4.png);
+  background-size: cover;
+  min-height: 100vh;
+  background-position: center;
   min-height: 100vh;
   justify-content: center;
   align-items: center;
@@ -171,6 +187,7 @@ body a {
   height: 450px;
   padding: 20px 0;
   background: #fff;
+  animation: expandIn 1s ease-in-out;
 }
 .result .wrapper .maincontents .auto-text #result-text {
   font-size: 30px;
@@ -186,6 +203,14 @@ body a {
   font-size: 30px;
 }
 
+.history {
+  background: #EF6B45;
+  background-image: url(../images/top/bg4.png);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
 .history h1 {
   text-align: center;
   font-size: 80px;
@@ -202,18 +227,41 @@ body a {
   text-align: center;
 }
 .history .list-wrapper ul {
-  display: inline-flex;
   flex-direction: column;
-  gap: 20px;
   text-align: left;
   margin: 0 auto;
+  padding: 40px;
+  overflow-y: scroll;
+  width: 800px;
+  height: 400px;
+  background: #fff;
+  animation: expandIn 0.8s ease-in-out;
+}
+.history .list-wrapper ul li {
+  color: #000;
+  margin-top: 40px;
+}
+.history .list-wrapper ul li:first-child {
+  margin-top: 0;
+}
+.history p #clear-history {
+  background: #fff;
+  color: #000;
+  width: 150px;
+  height: 30px;
+  border: none;
+}
+.history p #clear-history:hover {
+  transition: 0.4s;
+  background: #ff0000;
+  color: #fff;
 }
 .history p button {
   display: block;
-  margin: 50px auto 0;
+  margin: 30px auto 0;
 }
 .history a {
-  margin: 50px auto 0;
+  margin: 30px auto 0;
 }
 .history a p {
   display: flex;
@@ -290,5 +338,21 @@ body a {
   }
   100% {
     transform: rotate(-5 deg);
+  }
+}
+@keyframes expandIn {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  70% {
+    /* スケールが先に完了し、その後opacityが追いつく */
+    opacity: 1;
+    transform: scale(1.1);
+    /* 少しオーバーシュートして弾む感じ */
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }/*# sourceMappingURL=style.css.map */

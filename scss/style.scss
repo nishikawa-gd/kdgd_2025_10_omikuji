@@ -67,6 +67,11 @@ body {
     justify-content: center;
     align-items: center;
 
+    background-image: url(../images/top/bg4.png);
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+
     h1 {
         position: absolute;
         top: 10%;
@@ -100,6 +105,8 @@ body {
                 img {
                     width: 320px;
                     height: auto;
+                    animation: expandIn 1s ease-in-out;
+                    animation: hotline-miami 1s ease-in-out;
                 }
             }
 
@@ -123,6 +130,11 @@ body {
 
 .play {
     background: $bg-color;
+    background-image: url(../images/top/bg4.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: 100vh;
 
     .animation {
         position: absolute;
@@ -156,6 +168,10 @@ body {
 
 .result {
     background: $bg-color;
+    background-image: url(../images/top/bg4.png);
+    background-size: cover;
+    min-height: 100vh;
+    background-position: center;
     min-height: 100vh;
     justify-content: center;
     align-items: center;
@@ -214,6 +230,7 @@ body {
                 height: 450px;
                 padding: 20px 0;
                 background: #fff;
+                animation: expandIn 1s ease-in-out;
 
                 #result-text {
                     font-size: 30px;
@@ -237,6 +254,13 @@ body {
 
 
 .history {
+    background: $bg-color;
+    background-image: url(../images/top/bg4.png);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+
     h1 {
         text-align: center;
         font-size: 80px;
@@ -255,23 +279,52 @@ body {
         text-align: center;
 
         ul {
-            display: inline-flex;
             flex-direction: column;
-            gap: 20px;
             text-align: left;
             margin: 0 auto;
+            padding: 40px;
+            overflow-y: scroll;
+            width: 800px;
+            height: 400px;
+            background: #fff;
+            animation: expandIn 0.8s ease-in-out;
+
+            li {
+                color: #000;
+                margin-top: 40px;
+
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+
+    p {
+        #clear-history {
+            background: #fff;
+            color: #000;
+            width: 150px;
+            height: 30px;
+            border: none;
+
+            &:hover {
+                transition: 0.4s;
+                background: #ff0000;
+                color: #fff;
+            }
         }
     }
 
     p {
         button {
             display: block;
-            margin: 50px auto 0;
+            margin: 30px auto 0;
         }
     }
 
     a {
-        margin: 50px auto 0;
+        margin: 30px auto 0;
 
         p {
             display: flex;
@@ -366,5 +419,24 @@ body {
 
     100% {
         transform: rotate(-5 deg);
+    }
+}
+
+@keyframes expandIn {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    70% {
+        /* スケールが先に完了し、その後opacityが追いつく */
+        opacity: 1;
+        transform: scale(1.1);
+        /* 少しオーバーシュートして弾む感じ */
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
     }
 }
