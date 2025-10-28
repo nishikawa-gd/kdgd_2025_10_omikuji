@@ -13,40 +13,36 @@ $(function() {
 
 // ===== 演出ページの処理 =====
 function handlePlayPage() {
+  // bodyにplayクラスがなければ終了
+  if (!$('body').hasClass('play')) return;
 
+  // show-resultクラスのボタン押下時の処理
+  $('.show-result').on('click', function(e) {
 
-	// bodyにplayクラスがなければ終了
-	if (!$('body').hasClass('play')) return;
+    // デフォルトの動作をキャンセル
+    e.preventDefault();
 
-	// show-resultボタン押下時の処理
-	$('#show-result').on('click', function(e) {
+    // おみくじ結果とラッキーアイテムをランダムに選択
+    const result = omikujiResults[Math.floor(Math.random() * omikujiResults.length)];
 
-		// デフォルトの動作をキャンセル
-		e.preventDefault();
+    // ラッキーアイテムの選択（設定がONの場合のみ）
+    const lucky = settings.showLuckyItem
+      ? luckyItems[Math.floor(Math.random() * luckyItems.length)]
+      : null;
 
-		// おみくじ結果とラッキーアイテムをランダムに選択
-		const result = omikujiResults[Math.floor(Math.random() * omikujiResults.length)];
+    // 履歴保存
+    const history = JSON.parse(localStorage.getItem('omikujiHistory') || '[]');
+    history.push({ result, lucky, date: new Date().toLocaleString() });
+    localStorage.setItem('omikujiHistory', JSON.stringify(history));
 
-		// ラッキーアイテムの選択（設定がONの場合のみ）
-		const lucky = settings.showLuckyItem
-			? luckyItems[Math.floor(Math.random() * luckyItems.length)]
-			: null;
+    // 現在結果保存
+    localStorage.setItem('omikujiCurrent', JSON.stringify({ result, lucky }));
 
-		// 履歴保存
-		const history = JSON.parse(localStorage.getItem('omikujiHistory') || '[]');
-		
-		// 履歴に追加
-		history.push({ result, lucky, date: new Date().toLocaleString() });
-		// 履歴をlocalStorageに保存
-		localStorage.setItem('omikujiHistory', JSON.stringify(history));
-
-		// 現在結果保存
-		localStorage.setItem('omikujiCurrent', JSON.stringify({ result, lucky }));
-
-		// 結果ページへ遷移
-		window.location.href = 'result.html';
-	});
+    // 結果ページへ遷移
+    window.location.href = 'result.html';
+  });
 }
+
 
 
 // ===== 結果ページの処理 =====
@@ -104,6 +100,19 @@ function handleHistoryPage() {
 			$list.empty();
 		}
 	});
+
+	$(function() {
+  // 卵をバラバラに動かす
+  $('.animation a').each(function() {
+    const delay = Math.random() * 2;      // 0〜2秒ランダム遅延
+    const duration = 1.8 + Math.random(); // 1.8〜2.8秒ランダム速度
+    $(this).css({
+      'animation-delay': `${delay}s`,
+      'animation-duration': `${duration}s`
+    });
+  });
+});
+	
 }
 
 

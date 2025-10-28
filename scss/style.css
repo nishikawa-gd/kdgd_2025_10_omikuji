@@ -1,0 +1,52 @@
+.index {
+  background: url(../images/top/tp_bg.png) no-repeat;
+  background-size: cover;
+}
+
+.tp_btn {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tp_btn p {
+  margin: 10px 0;
+}
+
+.tp_btn img {
+  width: 376px;
+  height: 85px;
+}
+
+.play {
+  background: url(../images/play/bg.png) no-repeat;
+  background-size: cover;
+}
+
+.animation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 700px;
+  margin: 100px auto;
+  gap: 100px;
+}
+.animation a {
+  display: block;
+  width: 160px;
+  height: 194px;
+  background: url(../images/play/eeg.png);
+  background-size: cover;
+}
+.animation :hover {
+  animation: 1s ease-in-out;
+  background: url(../images/play/egg2.png);
+  background-size: cover;
+}
+
+.result {
+  background: url(../images/result/bg.png) no-repeat;
+  background-size: cover;
+}/*# sourceMappingURL=style.css.map */
