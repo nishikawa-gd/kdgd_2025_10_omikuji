@@ -1,3 +1,102 @@
 body {
-    background-color: #F00;
+    position: relative;
+    background-image: url(../images/top/bg_omikuji.png);
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+
+    .main-visual {
+        text-align: center;
+        padding-top: 5%;
+    }
+
+    .hiku {
+        text-align: center;
+        padding-top: 2%;
+    }
+
+    .rireki {
+        padding-left: 9%;
+        padding-top: 5%;
+    }
+
+    .cyattikopi {
+        position: absolute;
+        right: 20%;
+        bottom: 25%;
+    }
+
+    .omikuji {
+        position: absolute;
+        left: 3%;
+        top: 20%;
+    }
+
+    .animation {
+        text-align: center;
+        padding-top: 5%;
+        animation: spin 3s linear infinite;
+    }
+
+    .kekka {
+        text-align: center;
+        padding-top: 2%;
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .history-container {
+        text-align: center;
+
+        ul {
+            padding-top: 1%;
+        }
+
+        p {
+            margin-top: 2%;
+        }
+
+        .history-title {
+            font-size: 40px;
+            padding-top: 5%;
+        }
+    }
+
+    .result-cotainer {
+        text-align: center;
+
+        h1 {
+            font-size: 40px;
+            padding-top: 5%;
+        }
+
+        #result-text {
+            padding-top: 2%;
+            font-size: 16px;
+        }
+
+        .js-result-img-wrapper {
+            padding-top: 2%;
+        }
+
+        #lucky-wrapper {
+            padding-top: 2%;
+            font-size: 16px;
+        }
+
+        #lucky-item {
+            padding-top: 2%;
+            font-size: 16px;
+        }
+    }
+
+
 }
