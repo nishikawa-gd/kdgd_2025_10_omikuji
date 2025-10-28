@@ -77,33 +77,43 @@ function handleResultPage() {
 }
 
 
-// ===== 履歴ページの処理 =====
+// 履歴ページ処理
 function handleHistoryPage() {
-
-	// bodyにhistoryクラスがなければ終了
 	if (!$('body').hasClass('history')) return;
-
-	// localStorageから履歴を取得
+  
 	const history = JSON.parse(localStorage.getItem('omikujiHistory') || '[]');
-
-	// 履歴がなければメッセージを表示して終了
 	const $list = $('#history-list');
-
-	history.forEach(item => {
-		const $li = $('<li>').html(
-			`${item.date}：<strong>${item.result.type}</strong> - ${item.result.text}` +
-			(item.lucky ? ` (ラッキーアイテム: ${item.lucky})` : '')
-		);
-		$list.append($li);
+  
+	if (history.length === 0) {
+	  $list.append('<li>履歴はまだありません。</li>');
+	  return;
+	}
+  
+	// ★ 最新3件だけ取り出す（新しい順に）
+	const latestHistory = history.slice(-3).reverse();
+  
+	latestHistory.forEach(item => {
+	  const luckyText = item.lucky ? item.lucky : '（なし）';
+  
+	  // ★ 改行して見やすく
+	  const $li = $('<li>').html(`
+		<div class="history-item">
+		  <p class="history-date">${item.date}</p>
+		  <p class="history-result"><strong>${item.result.type}</strong> - ${item.result.text}</p>
+		  <p class="history-lucky">ラッキーアイテム：${luckyText}</p>
+		</div>
+	  `);
+  
+	  $list.append($li);
 	});
-	
-	// 履歴削除ボタン処理
-	$('#clear-history').on('click', function() {
-		if (confirm('履歴をすべて削除しますか？')) {
-			localStorage.removeItem('omikujiHistory');
-			$list.empty();
-		}
+  
+	$('#clear-history').on('click', function () {
+	  if (confirm('履歴をすべて削除しますか？')) {
+		localStorage.removeItem('omikujiHistory');
+		$list.empty();
+		$list.append('<li>履歴はまだありません。</li>');
+	  }
 	});
-}
-
-
+  }
+  
+  

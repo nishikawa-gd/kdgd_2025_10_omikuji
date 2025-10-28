@@ -1,3 +1,571 @@
-body {
-    background-color: #F00;
+html {
+    font-family: "Zen Maru Gothic", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+.index {
+    background-image: url(../images/bg.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    .contain {
+        background-color: #fff;
+        width: 92vw;
+        height: 96vh;
+        margin: 2vh 4vw;
+        position: relative;
+
+        .cloud_top {
+            position: absolute;
+            top: -2%;
+            left: 50%;
+            transform: translateX(-50%) scale(1.5);
+            transform-origin: center;
+
+            width: 100%;
+            max-width: none;
+            height: 20vh;
+
+            background-image: url(../images/cloud_top.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center top;
+            z-index: 10;
+        }
+
+        .cloud_bottom {
+            position: absolute;
+            bottom: -2%;
+            left: 50%;
+            transform: translateX(-50%) scale(1.5);
+            transform-origin: center;
+
+            width: 100%;
+            max-width: none;
+            height: 20vh;
+
+            background-image: url(../images/cloud_bottom.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center top;
+            z-index: 10;
+        }
+
+        .inner {
+            position: absolute;
+            z-index: 99;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            text-align: center;
+
+            z-index: 100;
+
+            h1 {
+                display: block;
+                width: 100%;
+                max-width: 450px;
+                margin: 0 auto;
+                padding-top: 22vh;
+
+                .ttl {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    object-fit: contain;
+                }
+            }
+
+            .btn_play,
+            .btn_history {
+                width: 240px;
+                height: 46px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-image: url(../images/btn_bg.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+
+                margin: 0 auto;
+
+                a {
+                    font-size: 26px;
+                    color: #fff;
+                    display: block;
+                }
+            }
+
+            .btn_play {
+                margin-top: 16px;
+            }
+
+            .btn_history {
+                margin-top: 16px;
+            }
+        }
+    }
+}
+
+.play {
+    background-image: url(../images/bg.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    .contain {
+        background-color: #fff;
+        width: 92vw;
+        height: 96vh;
+        margin: 2vh 4vw;
+        position: relative;
+
+        .cloud_top {
+            position: absolute;
+            top: -2%;
+            left: 50%;
+            transform: translateX(-50%) scale(1.5);
+            transform-origin: center;
+
+            width: 100%;
+            max-width: none;
+            height: 20vh;
+
+            background-image: url(../images/cloud_top.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center top;
+            z-index: 10;
+        }
+
+        .cloud_bottom {
+            position: absolute;
+            bottom: -2%;
+            left: 50%;
+            transform: translateX(-50%) scale(1.5);
+            transform-origin: center;
+
+            width: 100%;
+            max-width: none;
+            height: 20vh;
+
+            background-image: url(../images/cloud_bottom.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center top;
+            z-index: 10;
+        }
+
+        .inner {
+            position: absolute;
+            z-index: 99;
+            top: 21vh;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            text-align: center;
+
+            z-index: 100;
+
+            .play_txt {
+                font-size: 30px;
+                color: #FF622D;
+                text-align: center;
+            }
+
+            // .box_area {
+            //     max-height: 1000px;
+            //     background-color: #FF622D;
+            //     position: relative;
+
+            .animation {
+                width: 46vw;
+                height: auto;
+                margin: 28px auto 0 auto;
+                animation: floatBox 3.5s ease-in-out infinite;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transform: rotate(20deg);
+                }
+            }
+
+            // }
+
+            // .playpage_cloud {
+            //     width: 100%;
+            //     transform: translateX(-50%) scale(1.5);
+            //     transform-origin: center;
+
+            //     position: absolute;
+            //     bottom: 0px;
+
+            //     img {
+            //         width: 100%;
+            //         height: 100%;
+            //     }
+            // }
+
+            #show-result {
+                width: 240px;
+                height: 46px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-image: url(../images/btn_bg.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                font-size: 26px;
+                color: #fff;
+                margin: 28px auto 0 auto;
+            }
+        }
+    }
+}
+
+@keyframes floatBox {
+    0% {
+        transform: translateY(0);
+    }
+
+    10% {
+        transform: translateY(-15px);
+    }
+
+    20% {
+        transform: translateY(0);
+    }
+
+    30% {
+        transform: translateY(-15px);
+    }
+
+    40% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    60% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.result {
+    background-image: url(../images/bg.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    .contain {
+        background-color: #fff;
+        width: 92vw;
+        height: 96vh;
+        margin: 2vh 4vw;
+        position: relative;
+
+        .cloud_top {
+            position: absolute;
+            top: -2%;
+            left: 50%;
+            transform: translateX(-50%) scale(1.5);
+            transform-origin: center;
+
+            width: 100%;
+            max-width: none;
+            height: 20vh;
+
+            background-image: url(../images/cloud_top.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center top;
+            z-index: 10;
+        }
+
+        .cloud_bottom {
+            position: absolute;
+            bottom: -2%;
+            left: 50%;
+            transform: translateX(-50%) scale(1.5);
+            transform-origin: center;
+
+            width: 100%;
+            max-width: none;
+            height: 20vh;
+
+            background-image: url(../images/cloud_bottom.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center top;
+            z-index: 10;
+        }
+
+        .inner {
+            position: absolute;
+            z-index: 99;
+            top: 20vh;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            text-align: center;
+
+            z-index: 100;
+
+            .contain_txt {
+                font-size: 30px;
+                color: #FF622D;
+                text-align: center;
+            }
+
+            .js-result-img-wrapper{
+                display: block;
+                width: 100%;
+                max-width: 450px;
+                margin: 0 auto;
+                margin-top: 20px;
+
+                #result-img{
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    object-fit: contain;
+                }
+            }
+
+            #result-text{
+                font-size: 22px;
+                color: #FF622D;
+                text-align: center;
+
+                margin-top: 14px;
+            }
+
+            #lucky-wrapper {
+                background-image: url(../images/lucky_item.png);
+                width: 270px;
+                height: 86px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                margin: 12px auto 0px auto;
+
+                position: relative;
+
+                .lucky_item_ttl {
+                    font-size: 22px;
+                    color: #FF622D;
+                    text-align: center;
+
+                    position: absolute;
+                    top: 10px;
+                    left: 48px;
+                    // transform: translateX(-50%);
+                }
+
+                #lucky-item{
+                    font-size: 22px;
+                    color: #484848;
+                    text-align: center;
+
+                    position: absolute;
+                    top: 50px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+    }
+
+    .btn_revenge,
+    .btn_history {
+        width: 240px;
+        height: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url(../images/btn_bg.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        margin: 0 auto;
+
+        a {
+            font-size: 26px;
+            color: #fff;
+        }
+    }
+
+    .btn_revenge {
+        margin-top: 16px;
+    }
+
+    .btn_history {
+        margin-top: 16px;
+    }
+}
+
+.history {
+    background-image: url(../images/bg.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    .contain {
+        background-color: #fff;
+        width: 92vw;
+        height: 96vh;
+        margin: 2vh 4vw;
+        position: relative;
+
+        .cloud_top {
+            position: absolute;
+            top: -2%;
+            left: 50%;
+            transform: translateX(-50%) scale(1.5);
+            transform-origin: center;
+
+            width: 100%;
+            max-width: none;
+            height: 20vh;
+
+            background-image: url(../images/cloud_top.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center top;
+            z-index: 10;
+        }
+
+        .cloud_bottom {
+            position: absolute;
+            bottom: -2%;
+            left: 50%;
+            transform: translateX(-50%) scale(1.5);
+            transform-origin: center;
+
+            width: 100%;
+            max-width: none;
+            height: 20vh;
+
+            background-image: url(../images/cloud_bottom.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center top;
+            z-index: 10;
+        }
+
+        .inner {
+            position: absolute;
+            z-index: 99;
+            top: 20vh;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+
+            z-index: 100;
+
+            h1 {
+                font-size: 30px;
+                color: #FF622D;
+                text-align: center;
+            }
+
+            #history-list{
+                font-size: 20px;
+                color: #FF622D;
+
+                width: 90vw;
+                margin: 0px auto;
+
+                margin-top: 24px;
+
+                .history-date {
+                    font-size: 18px;
+                  }
+                  
+                  .history-result {
+                    margin-top: 6px;
+                  }
+                  
+                  .history-lucky {
+                    margin-top: 6px;
+                  }
+
+                li {
+                    background-image: url(../images/history_bg.png);
+                    width: 83vw;
+                    height: auto;
+                    border-radius: 6px;
+                    background-size: contain;
+                    padding: 10px;
+                    margin: 8px auto 0px auto;
+                  }
+            }
+
+            #clear-history{
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                outline: none;
+                padding: 0;
+                appearance: none;
+
+                font-family: "Zen Maru Gothic", sans-serif;
+                font-weight: 900;
+                font-style: normal;
+                font-size: 26px;
+                color: #fff;
+
+                width: 240px;
+                height: 46px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-image: url(../images/btn_bg.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+
+                margin: 16px auto 0px auto;
+            }
+
+            .modoru-btn{
+                width: 240px;
+                height: 46px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-image: url(../images/btn_bg.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+
+                margin: 16px auto 0px auto;
+
+                a{
+                    font-size: 26px;
+                    color: #fff;
+                }
+            }
+        }
+    }
 }

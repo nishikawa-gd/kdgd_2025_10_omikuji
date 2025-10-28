@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>おみくじ演出</title>
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@700;900&display=swap" rel="stylesheet">
+
   <script src="js/jquery-3.7.1.min.js"></script>
   <script src="js/settings.js"></script>
   <script src="js/function.js"></script>
 </head>
+
 <body class="play">
-  <h1>おみくじ演出</h1>
-  <div class="animation">
-    <img src="images/play/play.png" alt="おみくじを振る演出">
+  <div class="contain">
+    <div class="cloud_top"></div>
+    <div class="inner">
+      <p class="play_txt">占い中・・・</p>
+      <!-- <div class="box_area"> -->
+      <div class="animation">
+        <img src="images/box.png" alt="おみくじ箱">
+      </div>
+      <!-- </div> -->
+      <!-- <div class="playpage_cloud"><img src="images/playpage_cloud.png" alt=""></div> -->
+      <p><a href="#" id="show-result">結果を見る</a></p>
+    </div>
+    <div class="cloud_bottom"></div>
   </div>
-  <p><a href="#" id="show-result">結果を見る</a></p>
 </body>
+
 </html>
