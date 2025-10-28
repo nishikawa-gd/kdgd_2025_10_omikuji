@@ -308,7 +308,8 @@ body {
             color: #000;
             width: 150px;
             height: 30px;
-            border: none;
+            border: 3px solid #ff9900;
+            font-size: 14px;
 
             &:hover {
                 transition: 0.4s;
