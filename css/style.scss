@@ -519,24 +519,6 @@ h1{
     padding: 0 20px ;
 }
 
-// #history-list li::before{
-//     counter-increment: list;
-//     content: "";
-//     display: block;
-//     position: absolute;
-//     left: 10px;
-//     height: 10px;
-//     width: 10px;
-//     border-radius: 50%;
-//     background: var(--white);
-//     top: 50%;
-//     -moz-transform: translateY(-50%);
-//     -webkit-transform: translateY(-50%);
-//     -o-transform: translateY(-50%);
-//     -ms-transform: translateY(-50%);
-//     transform: translateY(-50%);
-// }
-
 // 履歴を消すボタン
 #clear-history{
     font-size: 1.6rem;
@@ -563,25 +545,6 @@ h1{
             height: 100%;
         }
 }
-
-// #clear-history::after{
-//   content: "";
-//   position: absolute;
-//   bottom: 4px;
-//   right: 4px;
-//   width: 0;
-//   height: 0;
-//   border-style: solid;
-//   border-width: 0 0 10px 10px; /* 三角形のサイズ */
-//   border-radius: 2px;
-//   border-color: transparent transparent var(--white) transparent; /* 背景色に合わせる */
-//   transition: bottom 0.2s ease-out, right 0.2s ease-out;
-// }
-
-// #clear-history:hover::after {
-//   bottom: 0;
-//   right: 0;
-// }
 
 // トップに戻るボタン
 .top-back{
