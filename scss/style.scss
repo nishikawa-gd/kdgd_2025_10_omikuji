@@ -229,7 +229,8 @@ body {
                 width: 298px;
                 height: 450px;
                 padding: 20px 0;
-                background: #fff;
+                background-image: url(../images/result/resultbg.png);
+                background-size: cover;
                 animation: expandIn 1s ease-in-out;
 
                 #result-text {
@@ -279,14 +280,15 @@ body {
         text-align: center;
 
         ul {
-            flex-direction: column;
+            flex-direction: column-reverse;
             text-align: left;
             margin: 0 auto;
             padding: 40px;
             overflow-y: scroll;
             width: 800px;
             height: 400px;
-            background: #fff;
+            background-image: url(../images/history/historybg.jpeg);
+            background-size: cover;
             animation: expandIn 0.8s ease-in-out;
 
             li {
