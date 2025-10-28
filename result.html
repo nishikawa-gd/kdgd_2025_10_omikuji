@@ -3,29 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <title>おみくじ結果</title>
+  <link rel="icon" href="images/top/favicon.png" sizes="32×32">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
   <script src="js/jquery-3.7.1.min.js"></script>
   <script src="js/settings.js"></script>
   <script src="js/function.js"></script>
-  <link href="css/reset.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Kaisei+Decol&family=Kalam:wght@300;400;700&family=Klee+One&family=Noto+Sans+JP:wght@100..900&family=RocknRoll+One&family=Sacramento&family=Sawarabi+Gothic&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&family=Yuji+Mai&family=Yuji+Syuku&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
 </head>
+
 <body class="result">
-  <h1>結果</h1>
-  <p id="result-text"></p>
 
-  <div class="js-result-img-wrapper">
-  <img id="result-img" src="" alt="結果画像">
+  <p class="result-about">！結果発表！</p>
+
+  <div class="result-wrapper">
+    <p id="result-text"></p>
+    <img id="result-img" src="" alt="結果画像">
   </div>
 
-  <div id="lucky-wrapper">
-    <p>ラッキーアイテム:</p>
-    <p id="lucky-item"></p>
+  <div class="result-inner">
+    <p class="result-back"><a href="history.html">履歴を見る</a></p>
+    <p class="result-pick"><a href="index.html">もう一度引く</a></p>
   </div>
-
-  <p><a href="index.html">もう一度引く</a></p>
-  <p><a href="history.html">履歴を見る</a></p>
 </body>
 </html>

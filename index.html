@@ -3,21 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <title>おみくじアプリ</title>
+  <link rel="icon" href="images/top/favicon.png" sizes="32×32">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
   <script src="js/jquery-3.7.1.min.js"></script>
   <script src="js/settings.js"></script>
   <script src="js/function.js"></script>
-  <link href="css/reset.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Kaisei+Decol&family=Kalam:wght@300;400;700&family=Klee+One&family=Noto+Sans+JP:wght@100..900&family=RocknRoll+One&family=Sacramento&family=Sawarabi+Gothic&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&family=Yuji+Mai&family=Yuji+Syuku&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Stick&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Maru+Gothic&family=Zen+Old+Mincho:wght@400;600&display=swap" rel="stylesheet">
 </head>
+
 <body class="index">
-  <h1>おみくじ</h1>
-  <div class="main-visual">
-    <img src="images/top/mainvisual.png" alt="メインビジュアル">
-  </div>
-  <p><a href="play.html">おみくじを引く</a></p>
-  <p><a href="history.html">履歴を見る</a></p>
+    <div class="index-background">
+      <p class="index-text">今日の運勢を、なんとな〜く占う</p>
+      <h1>
+        <img class="index-KI" src="images/top/title KI.svg" alt="気まぐれおみくじ">
+        <img class="index-MA" src="images/top/title MA.svg" alt="">
+        <img class="index-GU" src="images/top/title GU.svg" alt="">
+        <img class="index-RE" src="images/top/title RE.svg" alt="">
+      </h1>
+      <h2><img src="images/top/title omikuji.png" width="458" height="85" alt=""></h2>
+    </div>
+
+    <div class="index-flex">
+      <img src="images/top/neko top.png" width="280" height="400" alt="ネコのイラスト">
+        <div class="index-button">
+          <p class="index-pick"><a href="play.html">おみくじを引く</a></p>
+          <p class="index-back"><a href="history.html">履歴を見る</a></p>
+        </div>
+      <img src="images/top/neko top.png" width="280" height="400" alt="ネコのイラスト">      
+    </div>
 </body>
 </html>

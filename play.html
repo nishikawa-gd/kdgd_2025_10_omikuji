@@ -3,20 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <title>おみくじ演出</title>
+  <link rel="icon" href="images/top/favicon.png" sizes="32×32">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
   <script src="js/jquery-3.7.1.min.js"></script>
   <script src="js/settings.js"></script>
   <script src="js/function.js"></script>
-  <link href="css/reset.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Kaisei+Decol&family=Kalam:wght@300;400;700&family=Klee+One&family=Noto+Sans+JP:wght@100..900&family=RocknRoll+One&family=Sacramento&family=Sawarabi+Gothic&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&family=Yuji+Mai&family=Yuji+Syuku&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
 </head>
+
 <body class="play">
-  <h1>おみくじ演出</h1>
-  <div class="animation">
-    <img src="images/play/play.png" alt="おみくじを振る演出">
+  <h2>好きなキーホルダーを選んでね</h2>
+  
+  <div class="play-list">
+    <div class="keychain" style="--bg:#E23232;">
+      <img src="images/play/syoubai.png" alt="商売">
+    </div>
+    <div class="keychain" style="--bg:#E9B741;">
+      <img src="images/play/toushi.png" alt="投資">
+    </div>
+    <div class="keychain" style="--bg:#E97941;">
+      <img src="images/play/tabidati.png" alt="旅立ち">
+    </div>
+    <div class="keychain" style="--bg:#333577;">
+      <img src="images/play/kenkou.png" alt="健康">
+    </div>
+    <div class="keychain" style="--bg:#E23232;">
+      <img src="images/play/renai.png" alt="恋愛">
+    </div>
+    <div class="keychain" style="--bg:#E97941;">
+      <img src="images/play/game.png" alt="ゲーム">
+    </div>
   </div>
-  <p><a href="#" id="show-result">結果を見る</a></p>
+
+  <div class="play-cat">
+    <img src="images/play/cat.png" width="280" height="400" alt="ネコのイラスト">
+  </div>
+
+  <!-- <p><a href="#" id="show-result">結果を見る</a></p> -->
 </body>
 </html>
