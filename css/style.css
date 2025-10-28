@@ -24,7 +24,7 @@ a {
 }
 .index .contain .cloud_top {
   position: absolute;
-  top: -2%;
+  top: -6%;
   left: 50%;
   transform: translateX(-50%) scale(1.5);
   transform-origin: center;
@@ -55,6 +55,7 @@ a {
 .index .contain .inner {
   position: absolute;
   z-index: 99;
+  top: -25px;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -117,7 +118,7 @@ a {
 }
 .play .contain .cloud_top {
   position: absolute;
-  top: -2%;
+  top: -6%;
   left: 50%;
   transform: translateX(-50%) scale(1.5);
   transform-origin: center;
@@ -148,7 +149,7 @@ a {
 .play .contain .inner {
   position: absolute;
   z-index: 99;
-  top: 21vh;
+  top: 17vh;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -230,7 +231,7 @@ a {
 }
 .result .contain .cloud_top {
   position: absolute;
-  top: -2%;
+  top: -6%;
   left: 50%;
   transform: translateX(-50%) scale(1.5);
   transform-origin: center;
@@ -261,7 +262,7 @@ a {
 .result .contain .inner {
   position: absolute;
   z-index: 99;
-  top: 20vh;
+  top: 17vh;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -360,7 +361,7 @@ a {
 }
 .history .contain .cloud_top {
   position: absolute;
-  top: -2%;
+  top: -6%;
   left: 50%;
   transform: translateX(-50%) scale(1.5);
   transform-origin: center;
@@ -391,7 +392,7 @@ a {
 .history .contain .inner {
   position: absolute;
   z-index: 99;
-  top: 20vh;
+  top: 17vh;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
