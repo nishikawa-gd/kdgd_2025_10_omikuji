@@ -235,7 +235,7 @@ body a {
   overflow-y: scroll;
   width: 800px;
   height: 400px;
-  background-image: url(../images/history/historybg.jpeg);
+  background-image: url(../images/history/historybg.jpg);
   background-size: cover;
   animation: expandIn 0.8s ease-in-out;
 }
