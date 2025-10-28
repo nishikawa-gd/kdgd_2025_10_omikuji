@@ -1,18 +1,37 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>おみくじアプリ</title>
-  <script src="js/jquery-3.7.1.min.js"></script>
-  <script src="js/settings.js"></script>
-  <script src="js/function.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>だるまおみくじ</title>
+
+  <!-- CSSを読み込み -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="index">
-  <h1>おみくじアプリだよ</h1>
-  <div class="main-visual">
-    <img src="images/top/mainvisual.png" alt="メインビジュアル">
+
+<body>
+  <!-- Intro Page -->
+  <div id="intro-page" class="page">
+    <h1>だるまおみくじ</h1>
+    <img src="img/mikuji_pc.png" alt="">
+    <p>今日のだるま運勢を占ってみよう！</p>
+    <button id="start-btn">おみくじをはじめる</button>
   </div>
-  <p><a href="play.html">おみくじを引く</a></p>
-  <p><a href="history.html">履歴を見る</a></p>
+
+  <!-- Loading Page -->
+  <div id="loading-page" class="page hidden">
+    <h1>おみくじを振っています…</h1>
+    <img src="img/mikuji_pc_2.1.png" alt="おみくじ準備中">
+  </div>
+
+  <!-- Result Page -->
+  <div id="result-page" class="page hidden">
+    <h1>今日のだるま運勢</h1>
+    <div id="result"></div>
+    <a href="#" id="restart-btn">もう一度ひく</a>
+  </div>
+
+  <!-- JSを読み込み -->
+  <script src="js/script.js"></script>
 </body>
 </html>
