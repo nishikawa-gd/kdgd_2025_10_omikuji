@@ -1,0 +1,67 @@
+body {
+  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+  text-align: center;
+  background-color: #fff;
+  color: #FF2D12;
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  display: none;
+  padding: 60px 20px;
+}
+
+.active {
+  display: block;
+}
+
+img {
+  width: 80%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+/* 🎯だるまアニメーション（ローディング用） */
+.swing {
+  animation: swing 1.6s ease-in-out infinite;
+}
+
+@keyframes swing {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(6deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-6deg); }
+  100% { transform: rotate(0deg); }
+}
+
+h1, h2 {
+  font-size: medium;
+}
+
+button,a {
+  font-size: 1em;
+  padding: 12px 28px;
+  border: 2px solid #FF2D12;
+  border-radius: 10px;
+  background-color: #FF2D12;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+  margin-top: 25px;
+}
+
+button:hover {
+  background-color: #fff;
+  color: #FF2D12;
+  transform: scale(1.05);
+}
+
+.result-message {
+  font-size: 1em;
+  margin-top: 20px;
+  line-height: 1.6em;
+}
