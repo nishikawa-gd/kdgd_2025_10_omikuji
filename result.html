@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>おみくじ結果</title>
+  <link rel="stylesheet" href="css/style.css">
   <script src="js/jquery-3.7.1.min.js"></script>
   <script src="js/settings.js"></script>
   <script src="js/function.js"></script>
-  <link href="css/reset.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
 </head>
 <body class="result">
-  <h1>結果</h1>
-  <p id="result-text"></p>
+  <h1>到達</h1>
+  <p class="result-text" id="result-text"></p>
 
   <div class="js-result-img-wrapper">
   <img id="result-img" src="" alt="結果画像">
@@ -22,7 +21,9 @@
     <p id="lucky-item"></p>
   </div>
 
-  <p><a href="index.html">もう一度引く</a></p>
-  <p><a href="history.html">履歴を見る</a></p>
+  <div class="selects">
+    <p><a href="index.html">やり直す</a></p>
+    <p><a href="history.html">帰還する</a></p>
+  </div>
 </body>
 </html>

@@ -1,3 +1,146 @@
-body {
-  background-color: #F00;
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 1280px;
+    height: 800px;
+    background-color: black;
+    text-align: center;
+    color: white;
+}
+
+a,a:visited{
+    color: white;
+    text-decoration: none;
+}
+
+.index{
+    width: 100%;
+}
+
+.background{
+    width: 100%;
+}
+
+.line1{
+    position: absolute;
+    right: 50px;
+}
+
+.line2{
+    position: absolute;
+    top: 150px;
+}
+
+.kirakira1{
+    position: absolute;
+    top: 20px;
+    right: 120px;
+}
+
+.kirakira2{
+    position: absolute;
+    top: 130px;
+    left: 50px;
+}
+
+.ufo{
+    position: absolute;
+    top: 30px;
+    left: 300px;
+}
+
+.star2{
+    position: absolute;
+    right: 0;
+    top: 300px;
+}
+
+.star1{
+    position: absolute;
+    top: 600px;
+    left: 60px;
+}
+
+.man{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+}
+
+.title{
+    position: absolute;
+    top: 250px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+}
+
+.selects{
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.selects h1{
+    font-size: 40px;
+}
+
+.selects p{
+    font-size: 20px;
+}
+
+.play{
+    height: 500px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.play h1{
+    font-size: 40px;
+}
+
+.animation{
+    margin: 50px auto;
+}
+
+.play p{
+    width: 200px;
+    font-size: 40px;
+    border-bottom: 1px solid white;
+    margin: 0 auto;
+}
+
+.result{
+    height: 630px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.result p{
+    margin: 30px;
+}
+
+.result-text{
+    width: 750px;
+    font-size: 20px;
+    text-align: left;
+}
+
+.history1{
+    margin-top: 100px;
 }
