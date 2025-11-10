@@ -1,24 +1,27 @@
 body {
-  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
-  text-align: center;
-  background-color: #fffaf0;
-  color: #333;
   margin: 0;
   padding: 0;
+  background-image: url("../img/mikuji_bg.png"); /* ← replace with your image path */
+  background-size: cover; /* Makes it fill the screen */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents tiling */
+  height: 100vh; /* Makes body full height */
+  font-family: "Noto Sans JP", sans-serif;
+  color: #111;
+  text-align: center;
+  overflow: hidden;
 }
-
 .page {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding-top: 50px;
+  padding-top: 100px;
   height: 100%;
   position: absolute;
   width: 100%;
   transition: opacity 0.5s ease-in-out;
 }
-
 .page img {
   width: 80%;
   max-width: 500px;
@@ -55,7 +58,7 @@ a:hover {
 }
 
 .result-image {
-  width: 80%;
+  width: 50%;
   max-width: 500px;
   height: auto;
   margin-top: 20px;
@@ -63,9 +66,9 @@ a:hover {
 }
 
 #loading-page img {
-  width: 60%;
+  width: 100%;
+  max-width: 900px;
   height: auto;
-  max-width: 350px;
   margin-top: 50px;
   /* おみくじ箱を振るアニメーション */
   animation: shake 0.1s infinite;
